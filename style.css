@@ -1,3 +1,100 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    font-size: 30px;
+    
+    
+}
+.bgimg1{
+    background-image: url("img/pic1.jpg");
+    min-height: 50%;
+    
+}
+
+.bgimg2{
+    background-image: url("img/pic2.jpg");
+    min-height: 600px;
+    
+}
+
+.bgimg1, .bgimg2 {
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;  
+}
+
+.wrapper1{
+    display: flex;  
+    justify-content: center; 
+}
+
+.logo{
+    height: 500px;
+    text-align: center;
+
+}
+
+.logo p{
+    
+    font-size: 30px;
+}
+
+.wrapper2{
+    display: flex;  
+    flex-direction: column;
+}
+
+@media screen and (min-width: 800px){
+    .wrapper1{
+        
+        display: flex;
+        justify-content: center;
+
+    }
+
+
+    .logo{
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .wrapper2{
+        display: flex;  
+        flex-direction: column;
+    }
+
+    
+}
+
+
+
+
+/*****************************FEATURES***********************************/
+
+
+.features {
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    list-style: none;
+    align-content: space-around;
+
+}
+.features li {
+    width: 50%;
+    line-height: 30px;
+    
+}
+
+h1{
+    text-align: center;
+}
 div.container {
     display: flex;
     min-height: 30vh;
