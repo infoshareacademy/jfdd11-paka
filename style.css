@@ -1,0 +1,45 @@
+div.container {
+    display: flex;
+    min-height: 30vh;
+    justify-content: center;
+}
+
+div.box {
+    border: 3px solid black;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+.h1 {
+    justify-content: center;
+    font-size: xx-large;
+    font-family: fantasy;
+    display: flex;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    height: 10%;
+    max-width: 20%;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
