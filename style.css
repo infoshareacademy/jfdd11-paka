@@ -193,3 +193,42 @@ button {
     display: inline-block;
     font-size: 16px;
 }
+
+.photoscontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+
+}
+
+.photo1 {
+    height: 200px;
+    width: 160px ;
+    background-color: black;
+    background: url(Profilefoto.png) no-repeat center;
+    background-size: contain;
+
+}
+
+.photo2 {
+    height: 200px;
+    width: 160px;
+    background-color: black;
+
+
+}
+
+.photo3 {
+    height: 200px;
+    width: 160px;
+    background-color: black;
+
+}
+
+.photo4 {
+    height: 200px;
+    width: 160px;
+    background-color: black;
+
+}
