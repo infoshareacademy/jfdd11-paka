@@ -6,7 +6,7 @@
 
 
 html, body{
-    height: 100%;
+
     margin: 0;
     font-size: 30px;
     
@@ -15,10 +15,14 @@ html, body{
 
 .bgimg1{
     background-image: url("img/dogs-2195708_1920.jpg");
-    min-height: 50%;
+    min-height: 100vh;
     
 }
 
+
+.bgimg1 h1 {
+    padding-top: 50px;
+}
 .bgimg2{
     background-image: url("img/dog-2795963_1920.jpg");
     min-height: 600px;
@@ -112,6 +116,7 @@ html, body{
     line-height: 50px;
     padding: 10px 10px 30px;
 }
+/*************************EMAIL*************************************/
 
 
 
@@ -158,15 +163,52 @@ img {
 }
 
 button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
+    color: #fff3d5;
+    background-color: #f0553c;
     text-decoration: none;
+    padding: 30px 40px;
+    font-size: 1em;
+    margin: 0 10px;
+    border-radius: 30px;
+    text-shadow: 0 2px 2px black;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+/**************************NAV***********************************/
+
+.showMenu {
+    background-color: #f0553c;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    font-size: large;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  
+  .showMenu a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
     display: inline-block;
     font-size: 16px;
-}
+    
+  }
+  
+  
+  .showMenu a:hover {
+    background-color: rgb(238, 182, 78);
+    color: black;
+  }
+  
+  
 
 @media screen and (min-width: 800px){
    
