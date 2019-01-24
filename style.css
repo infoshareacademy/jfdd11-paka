@@ -1,21 +1,30 @@
 
+* {
+    box-sizing: border-box;
+     margin: 0;
+}
+
+
 html, body{
-    height: 100%;
+
     margin: 0;
     font-size: 30px;
-    
     
 }
 
 
 .bgimg1{
-    background-image: url("img/pic1.jpg");
-    min-height: 50%;
+    background-image: url("img/dogs-2195708_1920.jpg");
+    min-height: 100vh;
     
 }
 
+
+.bgimg1 h1 {
+    padding-top: 50px;
+}
 .bgimg2{
-    background-image: url("img/pic2.jpg");
+    background-image: url("img/dog-2795963_1920.jpg");
     min-height: 600px;
     
 }
@@ -39,19 +48,18 @@ html, body{
     
     width: auto;
     
-    
 }
 
 .wrapper1 h1{
     
-    color: #f0553c;
+    color: #f78d4c;
     height: auto;
 }
 
 .logo{
     height: 620px;
     text-align: center;
-    background-image: linear-gradient(0deg,#f3705a, #fff3d5);
+    background-image: linear-gradient(0deg,#f78d4c, #fff3d5);
     
 
     
@@ -70,7 +78,7 @@ html, body{
 
 .wrapper2 a{
     color: #fff3d5;
-    background-color: #f0553c;
+    background-color: #f78d4c;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
@@ -87,45 +95,6 @@ html, body{
 
 
 
-@media screen and (min-width: 800px){
-   
-
-
-    .logo{
-        height:500px;
-        
-        display: flex;
-        flex-direction: column;
-        
-    }
-
-    .wrapper1 img{
-        
-        margin: 20px 0 5px 0;
-        max-width: 100% ;
-        height: auto;
-         
-    }
-
-    .wrapper1 h1{
-        
-    }
-
-    .wrapper2{
-        display: flex;  
-        flex-direction: row;
-        justify-content: space-around;
-
-    }
-
-    .wrapper2 span{
-        margin: 10px -20px 0 0;
-    }
-}
-
-
-
-
 /*****************************FEATURES***********************************/
 
 
@@ -139,15 +108,24 @@ html, body{
     align-content: space-around;
 
 }
+.features-container {
+    background: #f78d4c;
+}
 .features li {
     width: 50%;
-    line-height: 30px;
-    
+    line-height: 50px;
+    padding: 10px 10px 30px;
 }
 /*************************EMAIL*************************************/
 
+
+
 h1{
     text-align: center;
+    margin: 0;
+
+    padding-bottom: 50px;
+
 }
 div.container {
     display: flex;
@@ -219,6 +197,8 @@ button {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 25px;
+    display: inline-block;
+    font-size: 16px;
     
   }
   
@@ -229,3 +209,41 @@ button {
   }
   
   
+
+@media screen and (min-width: 800px){
+   
+
+
+    .logo{
+        height:500px;
+        
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .wrapper1 img{
+        
+        margin: 20px 0 5px 0;
+        max-width: 100% ;
+        height: auto;
+         
+    }
+
+    .wrapper1 h1{
+        
+    }
+
+    .wrapper2{
+        display: flex;  
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+    .wrapper2 span{
+        margin: 10px -20px 0 0;
+    }
+}
+
+
