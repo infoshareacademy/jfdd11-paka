@@ -21,7 +21,7 @@ html, body{
 
 
 .bgimg1 h1 {
-    padding-top: 50px;
+    padding-top: 80px;
 }
 .bgimg2{
     background-image: url("img/dog-2795963_1920.jpg");
@@ -184,7 +184,7 @@ button {
     justify-content: space-around;
     font-size: large;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 8px 20px;
     position: fixed;
     z-index: 2;
     width: 100%;
