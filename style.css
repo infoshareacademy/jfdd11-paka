@@ -25,13 +25,19 @@ html, body{
     text-align: left;
     width: 50%;
 }
-.bgimg2{
+.bgimg2 {
     background-image: url("img/dog-2795963_1920.jpg");
     min-height: 600px;
-    
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;  
 }
+    
 
-.bgimg1, .bgimg2 {
+
+.bgimg1 {
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,6 +47,7 @@ html, body{
 .bgimg2 {
     min-height: 100vh;
 }
+
 
 .wrapper1{
     display: flex;  
@@ -136,6 +143,8 @@ div.container {
     display: flex;
     min-height: 30vh;
     justify-content: center;
+    background-image: linear-gradient(0deg, #fff3d5, #f78d4c);
+
 }
 
 div.box {
@@ -169,7 +178,7 @@ img {
 
 button {
     color: #fff3d5;
-    background-color: #f0553c;
+    background-color: #f78d4c;
     text-decoration: none;
     padding: 30px 40px;
     font-size: 1em;
