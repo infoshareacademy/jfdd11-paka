@@ -1,3 +1,25 @@
+@font-face {
+    font-family: "NewFont";
+    src: url(/img/Hefty-Normal.otf)
+}
+
+@font-face {
+    font-family: "NewType";
+    src: url(/img/NewType-Regular.OTF)
+}
+
+
+
+
+* {
+    font-family: 'NewFont'
+}
+
+h1 {
+    font-family: 'NewType';
+    
+}
+
 
 html, body{
     height: 100%;
@@ -121,6 +143,22 @@ html, body{
     .wrapper2 span{
         margin: 10px -20px 0 0;
     }
+
+
+    
+}
+
+@media screen and (max-width: 800px) {
+    .photo1, .photo2, .photo3, .photo4 {
+        height: 20px;
+        width: 20px;
+        margin-top: 20px;
+
+
+    }
+    .photoscontainer {
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -131,12 +169,14 @@ html, body{
 
 .features {
     display: flex;
+
     color: black;
     flex-wrap: wrap;
     justify-content: space-evenly;
     text-align: center;
     list-style: none;
     align-content: space-around;
+
 
 }
 .features li {
@@ -197,38 +237,56 @@ button {
 .photoscontainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 40px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 
 }
 
+
+
 .photo1 {
     height: 200px;
-    width: 160px ;
-    background-color: black;
-    background: url(Profilefoto.png) no-repeat center;
-    background-size: contain;
+    width: 200px ;
+    background: url(/img/Profilefoto.png) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 
 }
 
 .photo2 {
     height: 200px;
-    width: 160px;
-    background-color: black;
+    width: 200px;
+    background: url(/img/Profilefoto2.jpg) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 
 
 }
 
 .photo3 {
     height: 200px;
-    width: 160px;
+    width: 200px;
     background-color: black;
+    background: url(/img/Profilefoto3.jpg) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 
 }
 
 .photo4 {
     height: 200px;
-    width: 160px;
+    width: 200px;
     background-color: black;
+    background: url(/img/Profilefoto4.png) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 
 }
+
+.photo1:hover , .photo2:hover, .photo3:hover, .photo4:hover {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
