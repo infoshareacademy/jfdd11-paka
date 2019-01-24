@@ -45,7 +45,7 @@ html, body{
 
 
 .wrapper1{
-    display: flex;  
+    display: block;  
     justify-content: center;  
 }
 
@@ -167,7 +167,7 @@ p {
 }
 
 img {
-    height: 10%;
+    height: auto;
     max-width: 20%;
 }
 
@@ -201,7 +201,7 @@ button {
   
   
   .showMenu a {
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -215,6 +215,8 @@ button {
   .showMenu a:hover {
     background-color: rgb(238, 182, 78);
     color: black;
+    border-radius: 30px;
+    
   }
   
   
@@ -240,6 +242,11 @@ button {
     }
 
     .wrapper1 h1{
+        display: flex;
+        justify-content: center;
+        
+        
+
         
     }
 
