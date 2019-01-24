@@ -187,7 +187,7 @@ button {
 /**************************NAV***********************************/
 
 .showMenu {
-    background-color: #f0553c;
+    background-color: #f78d4c;
     overflow: hidden;
     display: flex;
     justify-content: space-around;
@@ -197,18 +197,19 @@ button {
     position: fixed;
     z-index: 2;
     width: 100%;
+    border-radius: 30px;
+    text-shadow: 0 2px 2px black;
+    box-shadow: 2px 2px 2px black;
   }
   
   
   .showMenu a {
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 25px;
     display: inline-block;
-    font-size: 16px;
-    
+    font-size: 25px;
   }
   
   
