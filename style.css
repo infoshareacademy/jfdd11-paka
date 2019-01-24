@@ -22,6 +22,8 @@ html, body{
 
 .bgimg1 h1 {
     padding-top: 80px;
+    text-align: left;
+    width: 50%;
 }
 .bgimg2{
     background-image: url("img/dog-2795963_1920.jpg");
@@ -35,6 +37,9 @@ html, body{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;  
+}
+.bgimg2 {
+    min-height: 100vh;
 }
 
 .wrapper1{
@@ -114,7 +119,7 @@ html, body{
 .features li {
     width: 50%;
     line-height: 50px;
-    padding: 10px 10px 30px;
+    padding: 40px 158px 60px;
 }
 /*************************EMAIL*************************************/
 
