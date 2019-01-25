@@ -16,37 +16,46 @@ html, body{
 .bgimg1{
     background-image: url("img/dogs-2195708_1920.jpg");
     min-height: 100vh;
-    
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    justify-content: flex-start; 
 }
 
 
 .bgimg1 h1 {
-    text-align: left;
-    width: 50%;
-    padding-top: 380px;
+    
+    width: 100%;
+    padding-top: 300px;
+    font-size: 30px;
+    font-size: 30px;
+    text-shadow: 0 0px 18px orange;
+    position: absolute;
+    top: 300px;
+    width: 100%;
+
 }
 .bgimg2{
     background-image: url("img/dog-2795963_1920.jpg");
-    min-height: 600px;
+    min-height: 100vh;
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: top center;
     background-size: cover;  
 }
+
+.smallBgImg1 {
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    max-width: 40%;
+    border-radius: 200px;
 }
 
-bgimg1 {
-    position: relative;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;  
-}
-.bgimg2 {
-    min-height: 100vh;
-}
-}
 
 .wrapper1{
     display: flex;  
@@ -225,7 +234,21 @@ button {
 
 @media screen and (min-width: 800px){
    
+    .smallBgImg1 {
+        position: absolute;
+        top: 90px;
+        left: 100px;
+        max-width: 30%;
+        border-radius: 200px;
+    }
 
+    
+    .bgimg1 h1 {
+        font-size: 40px;
+        padding-top: 30%;
+        position: absolute;
+        top: 300px;
+        width: 100%;
 
     .logo{
         height:500px;

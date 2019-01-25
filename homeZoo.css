@@ -11,6 +11,10 @@ html, body{
     
 }
 
+.smallBgImg1 img{
+    position: top;
+}
+
 .bgimg2{
     background-image: url("img/pic2.jpg");
     min-height: 600vh;
