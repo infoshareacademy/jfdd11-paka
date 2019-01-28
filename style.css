@@ -21,28 +21,43 @@ h1 {
 }
 
 
+* {
+    box-sizing: border-box;
+     margin: 0;
+}
+
+
 html, body{
-    height: 100%;
+
     margin: 0;
     font-size: 30px;
-    
     
 }
 
 
 .bgimg1{
-    background-image: url("img/pic1.jpg");
-    min-height: 50%;
+    background-image: url("img/dogs-2195708_1920.jpg");
+    min-height: 100vh;
     
 }
 
-.bgimg2{
-    background-image: url("img/pic2.jpg");
+
+.bgimg1 h1 {
+    padding-top: 80px;
+}
+.bgimg2 {
+    background-image: url("img/dog-2795963_1920.jpg");
     min-height: 600px;
-    
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;  
 }
+    
 
-.bgimg1, .bgimg2 {
+
+.bgimg1 {
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -50,8 +65,9 @@ html, body{
     background-size: cover;  
 }
 
+
 .wrapper1{
-    display: flex;  
+    display: block;  
     justify-content: center;  
 }
 
@@ -61,28 +77,25 @@ html, body{
     
     width: auto;
     
-    
 }
 
 .wrapper1 h1{
     
-    color: #f0553c;
+    color: #f78d4c;
     height: auto;
 }
 
 .logo{
     height: 620px;
     text-align: center;
-    background-image: linear-gradient(0deg,#f3705a, #fff3d5);
+    background-image: linear-gradient(0deg,#f78d4c, #fff3d5);
     
 
     
 }
 
-.logo p{
     
     
-}
 
 .wrapper2{
     display: flex;  
@@ -92,7 +105,7 @@ html, body{
 
 .wrapper2 a{
     color: #fff3d5;
-    background-color: #f0553c;
+    background-color: #f78d4c;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
@@ -109,6 +122,7 @@ html, body{
 
 
 
+<<<<<<< HEAD
 @media screen and (min-width: 800px){
    
 
@@ -164,6 +178,8 @@ html, body{
 
 
 
+=======
+>>>>>>> a1b94141ce1de88701bfbe4d355849db66f61fd3
 /*****************************FEATURES***********************************/
 
 
@@ -179,19 +195,31 @@ html, body{
 
 
 }
+.features-container {
+    background: #f78d4c;
+}
 .features li {
     width: 50%;
-    line-height: 30px;
-    
+    line-height: 50px;
+    padding: 10px 10px 30px;
 }
+/*************************EMAIL*************************************/
+
+
 
 h1{
     text-align: center;
+    margin: 0;
+
+    padding-bottom: 50px;
+
 }
 div.container {
     display: flex;
     min-height: 30vh;
     justify-content: center;
+    background-image: linear-gradient(0deg, #fff3d5, #f78d4c);
+
 }
 
 div.box {
@@ -219,18 +247,50 @@ p {
 }
 
 img {
-    height: 10%;
+    height: auto;
     max-width: 20%;
 }
 
+
 button {
-    background-color: #4CAF50; /* Green */
-    border: none;
+    color: #fff3d5;
+    background-color: #f78d4c;
+    text-decoration: none;
+    padding: 30px 40px;
+    font-size: 1em;
+    margin: 0 10px;
+    border-radius: 30px;
+    text-shadow: 0 2px 2px black;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+/**************************NAV***********************************/
+
+.showMenu {
+    background-color: #f78d4c;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    font-size: large;
+    border-radius: 5px;
+    padding: 8px 20px;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    border-radius: 30px;
+    text-shadow: 0 2px 2px black;
+    box-shadow: 2px 2px 2px black;
+  }
+  
+  
+  .showMenu a {
     color: white;
-    padding: 15px 32px;
     text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
     display: inline-block;
+<<<<<<< HEAD
     font-size: 16px;
 }
 
@@ -290,3 +350,85 @@ button {
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
+=======
+    font-size: 25px;
+  }
+  
+  
+  .showMenu a:hover {
+    background-color: rgb(238, 182, 78);
+    color: black;
+    border-radius: 30px;
+    
+  }
+  
+  
+
+@media screen and (min-width: 800px){
+   
+
+
+    .logo{
+        height:500px;
+        
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .wrapper1 img{
+        
+        margin: 20px 0 5px 0;
+        max-width: 100% ;
+        height: auto;
+         
+    }
+
+    .wrapper1 h1{
+        display: flex;
+        justify-content: center;
+        
+        
+
+        
+    }
+
+    .wrapper2{
+        display: flex;  
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+    .wrapper2 span{
+        margin: 10px -20px 0 0;
+    }
+}
+
+
+/*******************************ABout us**************************************/
+.aboutUs {
+    text-align: center; 
+    margin: 0;
+    background-image: linear-gradient(0deg, #f78d4c, #fff3d5);
+    padding: 2em;
+}
+    
+
+h4 {
+    
+    font-size: 3em;
+    margin-block-end: 0.67em;
+    font-weight: bold;
+
+}
+
+.picture {
+    border-radius: 100px;
+    width: 100%;
+    padding: 30px;
+    
+}
+
+
+>>>>>>> a1b94141ce1de88701bfbe4d355849db66f61fd3
