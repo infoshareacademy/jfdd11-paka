@@ -35,7 +35,7 @@ body {
     box-shadow: 2px 2px 2px black;
     color: black;
     padding-bottom: 0;
-    margin-left: 10vw;
+    padding-left: 40px;
 }
 
 .bgimg2 {
@@ -75,7 +75,7 @@ body {
 }
 
 .wrapper1 {
-    display: flex;
+    
     justify-content: center;
 }
 
