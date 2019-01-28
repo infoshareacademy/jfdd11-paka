@@ -122,64 +122,6 @@ html, body{
 
 
 
-<<<<<<< HEAD
-@media screen and (min-width: 800px){
-   
-
-
-    .logo{
-        height:500px;
-        
-        display: flex;
-        flex-direction: column;
-        
-    }
-
-    .wrapper1 img{
-        
-        margin: 20px 0 5px 0;
-        max-width: 100% ;
-        height: auto;
-         
-    }
-
-    .wrapper1 h1{
-        
-    }
-
-    .wrapper2{
-        display: flex;  
-        flex-direction: row;
-        justify-content: space-around;
-
-    }
-
-    .wrapper2 span{
-        margin: 10px -20px 0 0;
-    }
-
-
-    
-}
-
-@media screen and (max-width: 800px) {
-    .photo1, .photo2, .photo3, .photo4 {
-        height: 20px;
-        width: 20px;
-        margin-top: 20px;
-
-
-    }
-    .photoscontainer {
-        flex-wrap: wrap;
-    }
-}
-
-
-
-
-=======
->>>>>>> a1b94141ce1de88701bfbe4d355849db66f61fd3
 /*****************************FEATURES***********************************/
 
 
@@ -290,67 +232,6 @@ button {
     padding: 14px 16px;
     text-decoration: none;
     display: inline-block;
-<<<<<<< HEAD
-    font-size: 16px;
-}
-
-.photoscontainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-
-}
-
-
-
-.photo1 {
-    height: 200px;
-    width: 200px ;
-    background: url(/img/Profilefoto.png) no-repeat center;
-    background-size: cover;
-    cursor: pointer;
-
-}
-
-.photo2 {
-    height: 200px;
-    width: 200px;
-    background: url(/img/Profilefoto2.jpg) no-repeat center;
-    background-size: cover;
-    cursor: pointer;
-
-
-}
-
-.photo3 {
-    height: 200px;
-    width: 200px;
-    background-color: black;
-    background: url(/img/Profilefoto3.jpg) no-repeat center;
-    background-size: cover;
-    cursor: pointer;
-
-}
-
-.photo4 {
-    height: 200px;
-    width: 200px;
-    background-color: black;
-    background: url(/img/Profilefoto4.png) no-repeat center;
-    background-size: cover;
-    cursor: pointer;
-
-}
-
-.photo1:hover , .photo2:hover, .photo3:hover, .photo4:hover {
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
-
-=======
     font-size: 25px;
   }
   
@@ -431,4 +312,3 @@ h4 {
 }
 
 
->>>>>>> a1b94141ce1de88701bfbe4d355849db66f61fd3
