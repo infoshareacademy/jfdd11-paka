@@ -3,6 +3,7 @@
 }
 html {
   font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -48,6 +49,10 @@ a {
 .navigation .page {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  z-index: 900;
 }
 
 .main-menu {
@@ -171,4 +176,17 @@ a {
 
 .paw-container img {
   height: 2rem;
+}
+
+.aboutus {
+  position: flex;
+  justify-content: space-between;
+
+}
+
+.picture {
+ width: 20%;
+ 
+
+
 }
