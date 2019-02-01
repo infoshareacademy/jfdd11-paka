@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: green;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+
+}
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+    height: 85vh;
+}
+.header {
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header h1 {
+    justify-self: center;
+}
+.header h2 {
+  justify-self: end;
+}
+
+.box img {
+width: 30vw;
+height: auto;
+}
