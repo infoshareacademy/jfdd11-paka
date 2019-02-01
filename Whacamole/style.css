@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: green;
+    background-color: #4aaa00;
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
@@ -20,17 +20,19 @@ body {
 .header {
     height: 15vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+
+    
 }
-.header h1 {
-    justify-self: center;
+.header h1 { 
 }
 .header h2 {
-  justify-self: end;
+  background-color: antiquewhite;
+  margin-right: 15vw;
 }
 
 .box img {
 width: 30vw;
-height: auto;
+height: 10vw;
 }
