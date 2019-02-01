@@ -1,38 +1,58 @@
 * {
     box-sizing: border-box;
     margin: 0;
+
 }
 
 body {
     background-color: #4aaa00;
     margin: 0 auto;
-    width: 100vw;
-    height: 100vh;
-
+    width: 100%;
+    height: auto;
+    font-size: 30px;
 }
 .game {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-content: center;
     height: 85vh;
 }
+
 .header {
     height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    
+    font-family: 'Chango', cursive;
+    color : white;
 }
 .header h1 { 
 }
 .header h2 {
-  background-color: antiquewhite;
-  margin-right: 15vw;
+    font-family: 'Lato';
+    font-size: 300%;
+    margin-right: 15vw;
+    font-weight: 600;
 }
 
-.box img {
-width: 30vw;
-height: 10vw;
-}
+
+
+.box {
+    background: url(bush.png) bottom center no-repeat;
+    width: 33vw;
+    height: 15vw;
+    background-size: contain;
+    position: relative;
+ }
+ 
+ 
+ .cat {
+    background: url(cat.png) -9px 100% no-repeat;
+    position: absolute;
+    width:  33vw;
+    height: 15vw;
+    background-size: contain;
+    z-index: -1;
+ 
+ }
