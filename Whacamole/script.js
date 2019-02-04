@@ -4,27 +4,22 @@ const time = document.querySelector('.header__time');
 const cats = Array.from(document.querySelectorAll('.cat'));
 
 
-let lastCat;
-
 let randomTime = function(min, max){
     console.log(Math.random() * (max - min) + min);
 }
 
 const randomCat = function(cats){
 
-let catIndex = Math.floor(Math.random()) * (5);
+let catIndex = parseInt(Math.random() * (cats.length));
  let cat = cats[catIndex];
-    console.log(cat);
-    if (cat === lastCat) {
-        return randomCat(cats);
-    }
-     lastCat = cat;
-     return cat;
+    console.log(catIndex);
+    cat.classList.remove('up');
+    cat.classList.add('up');
 };
 
 
 const peep = function(cats){
-    let frequency = randomTime(200, 2000);
+    let frequency = randomTime(20, 2000);
     let cat = randomCat();
     cat.classList.add('up');
 };

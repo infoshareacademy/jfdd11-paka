@@ -51,8 +51,8 @@ body {
  .cat {
     background: url(big-2024026_640.png) 91px 100% no-repeat;
     position: absolute;
-    width: 100%;
-    height: 90%;
+    width: 33vw;
+    height: 13vw;
     background-size: contain;
     z-index: -1;
     transition: all 0.4s;
@@ -61,12 +61,3 @@ body {
     top: 0;
 }
 
-
-//box:after
-display: block
-background-url() bottom center no-repeat
-background-size: contain
-content: ''
-width 100%
-height 80px
-position absolute, z-index 2, bottom: -30px;
