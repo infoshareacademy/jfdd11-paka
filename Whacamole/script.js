@@ -21,13 +21,14 @@ function sezamie() {
     playbutton.style.left = 93.8 + "vw";
     underbutton.style.left = -6.5 + "vw";
     isOpen = true;
-    header.style.visibility = "visible";
+    header.style.opacity = 1;
   } else {
     leftdoor.style.left = 0 + "vw";
     rightdoor.style.left = 50 + "vw";
     playbutton.style.left = 43.5 + "vw";
     underbutton.style.left = 43.5 + "vw";
     isOpen = false;
+    header.style.opacity = 0;
   }
 }
 
