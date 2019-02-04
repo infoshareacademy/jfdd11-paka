@@ -31,31 +31,34 @@ body {
     font-family: 'Chango', cursive;
     color : white;
 }
+
 .header h1 { 
-    font-size: 8vw;
+    text-shadow: 0 0 7px black;
+    font-size: 7vw;
 }
 .header h2 {
+    text-shadow: 0 0 7px black;
     font-size: 10vw;
     font-family: 'Lato';
-    
     margin-right: 10vw;
     font-weight: 600;
 }
 
 .box {
     background: url(bush.png)  no-repeat bottom center;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     background-position: bottom ;    
     background-size: 158% 70%;
     position: relative;
-    left: 3vw;
+    top: 6%;
+    left: 4vw;
  }
  
  .cat {
     background: url(big-2024026_640.png) no-repeat  bottom center;
     position: absolute;
-    width:  100%;
+    width:  90%;
     height: 90%;
     bottom: 37%;     /*od 7 37do */ 
     left: -10%;
