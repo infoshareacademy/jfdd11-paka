@@ -1,5 +1,4 @@
 'use strict!'
-
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 const cats = Array.from(document.querySelectorAll('.cat'));

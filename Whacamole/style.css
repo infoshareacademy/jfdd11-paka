@@ -2,35 +2,71 @@
     box-sizing: border-box;
     margin: 0;
 }
-
 body {
-    background-color: green;
+    background-color: #4aaa00;
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-
+    font-size: 30px;
 }
 .game {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: space-evenly;
+    align-content: space-between;
+    padding-top: 20vh;
     height: 85vh;
 }
 .header {
     height: 15vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-}
-.header h1 {
-    justify-self: center;
-}
-.header h2 {
-  justify-self: end;
+    font-family: 'Chango', cursive;
+    color : white;
 }
 
-.box img {
-width: 30vw;
-height: auto;
+.header h1 { 
 }
+
+.header h2 {
+    font-family: 'Lato';
+    font-size: 300%;
+    margin-right: 15vw;
+    font-weight: 600;
+}
+
+.box {
+    background: url(bush.png) bottom center no-repeat;
+    width: 33vw;
+    height: 15vw;
+    background-size: contain;
+    position: relative;
+    flex: 1 0 33.33%;
+    overflow: hidden;
+
+ }
+ 
+ 
+ .cat {
+    background: url(big-2024026_640.png) 91px 100% no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-size: contain;
+    z-index: -1;
+    transition: all 0.4s;
+ }
+.up{
+    top: 0;
+}
+
+
+//box:after
+display: block
+background-url() bottom center no-repeat
+background-size: contain
+content: ''
+width 100%
+height 80px
+position absolute, z-index 2, bottom: -30px;
