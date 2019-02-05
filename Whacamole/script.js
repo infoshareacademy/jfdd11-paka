@@ -3,6 +3,30 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
+let distance = 10;
+let x = setInterval(function () {
+    distance = distance -1;
+    if (distance < 10) {
+        document.body.classList.add('timeRunningOut');
+
+    } else {
+        document.body.classList.remove('timeRunningOut');
+    }
+    time.innerHTML = distance ;
+        if (distance < 0) {
+            
+           document.body.classList.add('gameOver');
+        
+            clearInterval(x);
+            sesame();
+            time.innerHTML = "Game over";
+
+        }
+}, 1000);
+
+function addMoreTime() {
+    distance += 2;
+}
 let randomTime = function (min, max) {
     return (Math.random() * (max - min) + min);
 }
@@ -10,7 +34,8 @@ let randomTime = function (min, max) {
 
 
 const catShake = function (event) {
-    console.log('shake')
+    console.log('shake') 
+    addMoreTime();
     event.target.children[0].classList.add('shake');
     event.target.children[0].classList.remove('up');
     event.target.removeEventListener('mouseup', catShake);

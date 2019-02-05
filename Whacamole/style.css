@@ -86,7 +86,7 @@ body {
     justify-content: center;
     align-content: space-between;
     padding-top: 20vh;
-    height: 85vh;
+   
 }
 .header {
     height: 15vh;
@@ -161,3 +161,44 @@ body {
     }
   }
 
+.box img {
+width: 30vw;
+height: auto;
+}
+
+.timeRunningOut {
+    background: red;
+    
+    
+}
+.timeRunningOut .header__time {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    font-size: 150px;
+
+   
+
+}
+.gameOver .header__time {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40vh;
+    text-align: center;
+    z-index: 80;
+}
+
+@keyframes blink {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+}
