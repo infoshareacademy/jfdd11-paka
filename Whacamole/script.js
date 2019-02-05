@@ -27,7 +27,7 @@ function addMoreTime() {
     distance += 2;
 }
 let randomTime = function (min, max) {
-    console.log(Math.random() * (max - min) + min);
+    return (Math.random() * (max - min) + min);
 }
 
 
@@ -56,4 +56,4 @@ const randomCat = function () {
 
 };
 
-setInterval(randomCat, 700);
+setInterval(randomCat, randomTime(200, 1000));

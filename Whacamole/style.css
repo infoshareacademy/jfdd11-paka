@@ -41,10 +41,9 @@ body {
     height: 20vw;
     background-size: contain;
     position: relative;
-    flex: 1 0 33.33%;
     overflow: hidden;
     padding-top: 110px;
-    cursor:url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+    cursor:url(paw2.png), auto;
 
  }
  
@@ -55,7 +54,7 @@ body {
     height: 13vw;
     background-size: contain;
     z-index: -3;
-    /* transition: ease-in-out 0.2s; */
+   /*transition: ease-in-out 0.2s; */
     overflow: hidden;
     bottom: -27px;
     transition: bottom 1s ease-in-out;
