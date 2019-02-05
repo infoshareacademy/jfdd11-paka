@@ -26,8 +26,7 @@ body {
     color : white;
 }
 
-.header h1 { 
-}
+
 
 .header h2 {
     font-family: 'Lato';
@@ -101,11 +100,23 @@ height: auto;
 .timeRunningOut {
     background: red;
     
+    
 }
 .timeRunningOut .header__time {
     animation-duration: 1s;
     animation-name: blink;
     animation-iteration-count: infinite;
+    font-size: 150px;
+   
+
+}
+.gameOver .header__time {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40vh;
+    text-align: center;
+    
 }
 
 @keyframes blink {

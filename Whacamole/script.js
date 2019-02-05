@@ -3,7 +3,7 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
-let distance = 12;
+let distance = 16;
 let x = setInterval(function () {
     distance = distance -1;
     if (distance < 10) {
@@ -15,6 +15,7 @@ let x = setInterval(function () {
     time.innerHTML = distance ;
         if (distance < 0) {
             
+           // document.body.classList.add('gameOver');
         
             clearInterval(x);
             time.innerHTML = "Game over";
@@ -23,7 +24,7 @@ let x = setInterval(function () {
 }, 1000);
 
 function addMoreTime() {
-    distance += 5;
+    distance += 2;
 }
 let randomTime = function (min, max) {
     console.log(Math.random() * (max - min) + min);
@@ -55,4 +56,4 @@ const randomCat = function () {
 
 };
 
-setInterval(randomCat, 1000);
+setInterval(randomCat, 700);
