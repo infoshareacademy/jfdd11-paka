@@ -2,33 +2,96 @@
     box-sizing: border-box;
     margin: 0;
 }
-
 body {
-    background-color: green;
+    background-color: #4aaa00;
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-
+    font-size: 30px;
 }
 .game {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: space-evenly;
+    align-content: space-between;
+    padding-top: 20vh;
     height: 85vh;
 }
 .header {
     height: 15vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    font-family: 'Chango', cursive;
+    color : white;
 }
-.header h1 {
-    justify-self: center;
+
+.header h1 { 
 }
+
 .header h2 {
-  justify-self: end;
+    font-family: 'Lato';
+    font-size: 300%;
+    margin-right: 15vw;
+    font-weight: 600;
 }
+
+.box {
+    background: url(bush.png) 50% 124% no-repeat;
+    width: 33vw;
+    height: 20vw;
+    background-size: contain;
+    position: relative;
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    padding-top: 110px;
+    cursor:url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+
+ }
+ 
+ .cat {
+    background: url(big-2024026_640.png) 91px 100% no-repeat;
+    position: absolute;
+    width: 33vw;
+    height: 13vw;
+    background-size: contain;
+    z-index: -3;
+    /* transition: ease-in-out 0.2s; */
+    overflow: hidden;
+    bottom: -27px;
+    transition: bottom 1s ease-in-out;
+
+
+    
+ }
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.up{
+   bottom: 100px;
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
 
 .box img {
 width: 30vw;
