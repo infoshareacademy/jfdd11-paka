@@ -7,8 +7,6 @@ let randomTime = function (min, max) {
     return (Math.random() * (max - min) + min);
 }
 
-
-
 const catShake = function (event) {
     console.log('shake')
     event.target.children[0].classList.add('shake');
@@ -32,4 +30,4 @@ const randomCat = function () {
 
 };
 
-setInterval(randomCat, randomTime(200, 1000));
+setInterval(randomCat, randomTime(500, 1000));
