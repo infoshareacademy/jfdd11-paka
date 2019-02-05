@@ -3,9 +3,11 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
-let distance = 10;
+let distance = 60;
+let level = 1;
 let x = setInterval(function () {
-    distance = distance -1;
+    distance = distance - level;
+
     if (distance < 10) {
         document.body.classList.add('timeRunningOut');
 
@@ -21,6 +23,9 @@ let x = setInterval(function () {
             sesame();
             time.innerHTML = "Game over";
 
+        }
+        if (distance >= 65){
+        level += 1;
         }
 }, 1000);
 
@@ -55,7 +60,7 @@ const randomCat = function () {
 
 };
 
-setInterval(randomCat, randomTime(500, 1000));
+setInterval(randomCat, randomTime(1000, 3000));
 
 
 
@@ -90,4 +95,4 @@ function sesame() {
 playbutton.addEventListener("click", sesame);
 underbutton.addEventListener("click", sesame);
 
-setInterval(randomCat, randomTime(200, 1000));
+setInterval(randomCat, randomTime(500, 1000));
