@@ -11,6 +11,7 @@ body {
     width: 100%;
     height: auto;
     font-size: 30px;
+    overflow: hidden;
 }
 
 
@@ -19,6 +20,85 @@ body {
     grid-template-columns: auto auto auto;
     grid-template-rows: 1fr 1fr;
     height: 78vh; 
+    overflow: hidden;
+}
+
+ /*playbutton*/
+
+  .wrapper {
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+   
+
+  }
+  
+  .playbutton {
+    height: 25vh;
+    width: 13vw;
+    background-size: contain;
+    cursor: pointer;
+    top: 2vh;
+    left: 43.5vw;
+    position: absolute;
+    background-color:  whitesmoke;
+    border-radius: 25%;
+    transition: all 3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .underbutton {
+    height: 25vh;
+    width: 13vw;
+    background-size: contain;
+    cursor: pointer;
+    top: 2vh;
+    left: 43.5vw;
+    position: absolute;
+    background-color:  darkgrey;
+    border-radius: 25%;
+    transition: all 3s ease-in-out;
+    z-index: 900;
+  }
+
+
+
+
+
+  .leftdoor {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    left: 0;
+    position: absolute;
+    background-color: #3f8807;
+    transition: all 3s ease-in-out;
+    z-index: 500;
+  }
+  
+  .rightdoor {
+    height: 100%;
+    width: 50vw;
+    display: flex; 
+    position: absolute;
+    left: 50vw;
+    flex: 1 1 0; 
+    background-color: #2c5c07;
+    transition: all 3s ease-in-out;
+    z-index: 500;
+  }
+
+
+
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding-top: 20vh;
+   
 }
 
 .header {
@@ -41,6 +121,7 @@ body {
     margin-right: 10vw;
     font-weight: 600;
 }
+
 
 .box {
     background: url(bush.png)  no-repeat bottom center;
@@ -124,5 +205,104 @@ body {
         left: 4%;
         background-size: 57% 57%;
         z-index: -1;
-        transition: all 0.4s;
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+
+/*
+.box {
+    background: url(bush.png) 50% 124% no-repeat;
+    width: 33vw;
+    height: 20vw;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+    padding-top: 110px;
+    cursor:url(paw2.png), auto;
+
+ }
+ */
+/*
+ .cat {
+    background: url(big-2024026_640.png) 91px 100% no-repeat;
+    position: absolute;
+    width: 33vw;
+    height: 13vw;
+    background-size: contain;
+    z-index: -3;
+   
+    overflow: hidden;
+    bottom: -27px;
+    transition: bottom 1s ease-in-out; 
+ }          /*transition: ease-in-out 0.2s; */
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.up{
+   bottom: 100px;
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+/*
+.box img {
+width: 30vw;
+height: auto;
+}
+*/
+.timeRunningOut {
+    background: red;
+    
+    
+}
+.timeRunningOut .header__time {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    font-size: 150px;
+
+   
+
+}
+.gameOver .header__time {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40vh;
+    text-align: center;
+    z-index: 80;
+}
+
+@keyframes blink {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
 }

@@ -323,24 +323,26 @@ div.box {
 /*******************************ABout us**************************************/
 
 .aboutUs {
-    text-align: center;
+   
     margin: 0;
     background-image: linear-gradient(0deg, #f78d4c, #fff3d5);
     padding: 2em;
 }
 
-.aboutUs img {
-    width: 20%;
-}
+
+
 
 h4 {
+    text-align: center;
     font-size: 3em;
     margin-block-end: 0.67em;
     font-weight: bold;
+    
 }
 
 .picture {
-    border-radius: 100px;
+
+    border-radius: 50%;
     width: 100%;
     padding: 30px;
 }
