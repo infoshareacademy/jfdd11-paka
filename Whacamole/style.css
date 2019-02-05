@@ -12,10 +12,6 @@ body {
     font-size: 30px;
 }
 .game {
-    /*display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;*/
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: 1fr 1fr;
@@ -49,10 +45,11 @@ body {
     width: 90%;
     height: 90%;
     background-position: bottom ;    
-    background-size: 158% 70%;
+    background-size: 110% 70%;
     position: relative;
     top: 6%;
     left: 4vw;
+    
  }
  
  .cat {
@@ -61,8 +58,8 @@ body {
     width:  90%;
     height: 90%;
     bottom: 37%;     /*od 7 37do */ 
-    left: -10%;
-    background-size: 70% 70%;
+    left: -3%;
+    background-size: 50% 70%;
     z-index: -1;
     transition: all 0.4s;
     
