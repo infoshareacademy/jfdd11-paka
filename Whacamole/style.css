@@ -39,3 +39,22 @@ height: auto;
     background: red;
     
 }
+.timeRunningOut .header__time {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+}
