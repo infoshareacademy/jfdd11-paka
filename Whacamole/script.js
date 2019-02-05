@@ -4,7 +4,7 @@ const time = document.querySelector('.header__time');
 
 
 let randomTime = function (min, max) {
-    console.log(Math.random() * (max - min) + min);
+    return (Math.random() * (max - min) + min);
 }
 
 
@@ -66,3 +66,5 @@ function sesame() {
 
 playbutton.addEventListener("click", sesame);
 underbutton.addEventListener("click", sesame);
+
+setInterval(randomCat, randomTime(200, 1000));
