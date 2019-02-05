@@ -21,7 +21,7 @@ function sezamie() {
     playbutton.style.left = 93.8 + "vw";
     underbutton.style.left = -6.5 + "vw";
     isOpen = true;
-    header.style.opacity = 1;
+    header.style.opacity = 2;
   } else {
     leftdoor.style.left = 0 + "vw";
     rightdoor.style.left = 50 + "vw";
@@ -31,6 +31,7 @@ function sezamie() {
     header.style.opacity = 0;
   }
 }
+
 
 playbutton.addEventListener("click", sezamie);
 underbutton.addEventListener("click", sezamie);
