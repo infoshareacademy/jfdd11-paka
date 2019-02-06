@@ -3,7 +3,7 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
-let distance = 60;
+let distance = 20;
 let level = 1;
 let x = setInterval(function () {
     distance = distance - level;
@@ -29,8 +29,8 @@ let x = setInterval(function () {
     }
 }, 1000);
 
-function addMoreTime() {
-    distance += 2;
+function addMoreTime(x) {
+    distance += x;
 }
 
 let randomTime = function (min, max) {
@@ -39,7 +39,17 @@ let randomTime = function (min, max) {
 
 
 const catShake = function (event) {
-    addMoreTime();
+    if (event.target.children[0].classList.contains("badCat")){
+        addMoreTime(-20);
+        event.target.children[1].textContent = "-20";
+    } else {
+        addMoreTime(2);
+    event.target.children[1].textContent = "+2";
+    }
+    
+    setTimeout(function(){
+        event.target.children[1].textContent = "";
+    },500)
     event.target.children[0].classList.add('shake');
     event.target.children[0].classList.remove('up');
     event.target.removeEventListener('mouseup', catShake);

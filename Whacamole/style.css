@@ -130,6 +130,12 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
 }
+.score {
+    font-size: 150px;
+    text-align: center;
+    color: white;
+   
+}
 
 .up {
     bottom: 100px;
