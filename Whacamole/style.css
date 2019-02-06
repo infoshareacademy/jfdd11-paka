@@ -121,7 +121,7 @@ body {
     margin-right: 10vw;
     font-weight: 600;
 }
-
+/*
 
 .box {
     background: url(bush.png)  no-repeat bottom center;
@@ -132,7 +132,7 @@ body {
     position: relative;
     bottom: -2%;
  }
-
+*/
  .box1{
     right: -3%;
  }
@@ -149,7 +149,7 @@ body {
     left: -3%;
  }
 
-
+/*
  .cat {
     background: url(big-2024026_640.png) no-repeat  bottom center;
     position: absolute;
@@ -162,7 +162,7 @@ body {
     transition: all 0.4s;
     
  }
-
+*/
  .up{
     top: 0;
 }
@@ -210,7 +210,7 @@ body {
 }
 
 
-/*
+
 .box {
     background: url(bush.png) 50% 124% no-repeat;
     width: 33vw;
@@ -222,8 +222,8 @@ body {
     cursor:url(paw2.png), auto;
 
  }
- */
-/*
+ 
+
  .cat {
     background: url(big-2024026_640.png) 91px 100% no-repeat;
     position: absolute;
@@ -235,7 +235,7 @@ body {
     overflow: hidden;
     bottom: -27px;
     transition: bottom 1s ease-in-out; 
- }          /*transition: ease-in-out 0.2s; */
+ }           
 
 .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
