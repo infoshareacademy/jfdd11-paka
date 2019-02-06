@@ -120,17 +120,8 @@ body {
     bottom: -27px;
     transition: bottom 1s ease-in-out;
 }
-.badcat {
-    background: url(badcat.png) 91px 100% no-repeat;
-    position: absolute;
-    width: 33vw;
-    height: 13vw;
-    background-size: contain;
-    z-index: -3;
-    /*transition: ease-in-out 0.2s; */
-    overflow: hidden;
-    bottom: -27px;
-    transition: bottom 1s ease-in-out;
+.cat.badCat {
+    background-image: url(badcat.png);
 }
 
 .shake {

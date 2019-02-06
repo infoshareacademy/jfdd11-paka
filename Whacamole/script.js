@@ -14,30 +14,31 @@ let x = setInterval(function () {
     } else {
         document.body.classList.remove('timeRunningOut');
     }
-    time.innerHTML = distance ;
-        if (distance < 0) {
-            
-           document.body.classList.add('gameOver');
-        
-            clearInterval(x);
-            sesame();
-            time.innerHTML = "Game over";
+    time.innerHTML = distance;
+    if (distance < 0) {
 
-        }
-        if (distance >= 65){
+        document.body.classList.add('gameOver');
+
+        clearInterval(x);
+        sesame();
+        time.innerHTML = "Game over";
+
+    }
+    if (distance >= 65) {
         level += 1;
-        }
+    }
 }, 1000);
 
 function addMoreTime() {
     distance += 2;
 }
+
 let randomTime = function (min, max) {
     return (Math.random() * (max - min) + min);
 }
 
+
 const catShake = function (event) {
-    console.log('shake') 
     addMoreTime();
     event.target.children[0].classList.add('shake');
     event.target.children[0].classList.remove('up');
@@ -45,20 +46,35 @@ const catShake = function (event) {
 }
 
 const randomCat = function () {
+    
     const cats = Array.from(document.querySelectorAll('.cat'));
+    
+    
 
     let catIndex = parseInt(Math.random() * (cats.length));
-    cats.forEach(element => element.classList.remove('up', 'shake'));
+    
+    
+    cats.forEach(element => element.classList.remove('up', 'shake','badCat'));
 
     let cat = cats[catIndex];
-    console.log(cat);
 
-    // console.log(catIndex);
+    let random_boolean = Math.random() >= 0.5;
+
+    if (random_boolean === true) {
+        cat.classList.add('badCat');
+        
+    }
+    
     cat.classList.add('up');
+   // cat.classList.add('badCat');
     cat.parentElement.addEventListener('mouseup', catShake)
 
+}
 
-};
+let showBadCat = function (event) {
+   // event.target.classList.remove('cat');
+    event.target.classList.add('badCat');
+}
 
 setInterval(randomCat, randomTime(1000, 3000));
 
@@ -69,26 +85,28 @@ let leftdoor = document.querySelector(".leftdoor");
 let rightdoor = document.querySelector(".rightdoor");
 let playbutton = document.querySelector(".playbutton");
 let underbutton = document.querySelector(".underbutton");
-let header =  document.querySelector(".header");
+let header = document.querySelector(".header");
 let isOpen = false;
 let start = document.querySelector(".wrapper")
 
 function sesame() {
-  if (isOpen === false) {
-    leftdoor.style.left = -50 + "vw";
-    rightdoor.style.left = 100 + "vw";
-    playbutton.style.left = 93.8 + "vw";
-    underbutton.style.left = -6.5 + "vw";
-    isOpen = true;
-    header.style.opacity = 2; }
-  else {
-    leftdoor.style.left = 0 + "vw";
-    rightdoor.style.left = 50 + "vw";
-    playbutton.style.left = 43.5 + "vw";
-    underbutton.style.left = 43.5 + "vw";
-    isOpen = false;
-    header.style.opacity = 0;
-  } }
+    if (isOpen === false) {
+        leftdoor.style.left = -50 + "vw";
+        rightdoor.style.left = 100 + "vw";
+        playbutton.style.left = 93.8 + "vw";
+        underbutton.style.left = -6.5 + "vw";
+        isOpen = true;
+        header.style.opacity = 2;
+    }
+    else {
+        leftdoor.style.left = 0 + "vw";
+        rightdoor.style.left = 50 + "vw";
+        playbutton.style.left = 43.5 + "vw";
+        underbutton.style.left = 43.5 + "vw";
+        isOpen = false;
+        header.style.opacity = 0;
+    }
+}
 
 
 
