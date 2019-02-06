@@ -36,6 +36,10 @@ let randomTime = function (min, max) {
 const catShake = function (event) {
     console.log('shake') 
     addMoreTime();
+    event.target.children[1].textContent = "+2";
+    setTimeout(function(){
+        event.target.children[1].textContent = "";
+    },500)
     event.target.children[0].classList.add('shake');
     event.target.children[0].classList.remove('up');
     event.target.removeEventListener('mouseup', catShake);
