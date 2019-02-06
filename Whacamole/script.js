@@ -3,7 +3,7 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
-let distance = 60;
+let distance = 6000;
 let level = 1;
 let x = setInterval(function () {
     distance = distance - level;
