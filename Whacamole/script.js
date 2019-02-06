@@ -29,8 +29,8 @@ let x = setInterval(function () {
     }
 }, 1000);
 
-function addMoreTime() {
-    distance += 2;
+function addMoreTime(x) {
+    distance += x;
 }
 
 let randomTime = function (min, max) {
@@ -39,8 +39,14 @@ let randomTime = function (min, max) {
 
 
 const catShake = function (event) {
-    addMoreTime();
+    if (event.target.children[0].classList.contains("badCat")){
+        addMoreTime(-20);
+        event.target.children[1].textContent = "-20";
+    } else {
+        addMoreTime(2);
     event.target.children[1].textContent = "+2";
+    }
+    
     setTimeout(function(){
         event.target.children[1].textContent = "";
     },500)
