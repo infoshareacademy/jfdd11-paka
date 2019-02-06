@@ -235,4 +235,8 @@ h4 {
   .burger {
     display: flex;
   }
+
+  .intro .page {
+    background: white;
+  }
 }
