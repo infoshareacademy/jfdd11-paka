@@ -54,21 +54,20 @@ const randomCat = function () {
     let catIndex = parseInt(Math.random() * (cats.length));
     
     
-    cats.forEach(element => element.classList.remove('up', 'shake','badCat'));
+    cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
 
     let cat = cats[catIndex];
 
-    let random_boolean = Math.random() >= 0.5;
+    let randomBoolean = Math.random() >= 0.5;
 
-    if (random_boolean === true) {
+    if (randomBoolean === true) {
         cat.classList.add('badCat');
-        
     }
-    
-    cat.classList.add('up');
-   // cat.classList.add('badCat');
-    cat.parentElement.addEventListener('mouseup', catShake)
 
+    cat.classList.add('up');
+    
+
+    cat.parentElement.addEventListener('mouseup', catShake)
 }
 
 let showBadCat = function (event) {
