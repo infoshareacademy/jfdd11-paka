@@ -23,42 +23,33 @@ body {
   }
   
   .playbutton {
-    height: 25vh;
-    width: 13vw;
+    height: 35vh;
+    width: 23vw;
     background-size: contain;
     cursor: pointer;
-    top: 2vh;
-    left: 50.5vw;
+    bottom: 40vh;
+    left: 40.5vw;
     position: absolute;
     background: url('playbutton.png') no-repeat center;
     background-size: contain;
     border-radius: 25%;
     transition: all 1.5s ease-in-out;
     z-index: 1000;
+    
   }
-
-  /*.underbutton {
-    height: 25vh;
-    width: 13vw;
+  
+  .playbutton:hover {
+    transform: rotate(360deg);
+    background: url('sadplaybutton.png') no-repeat center;
     background-size: contain;
-    cursor: pointer;
-    top: 2vh;
-    left: 43.5vw;
-    position: absolute;
-    border-radius: 25%;
-    transition: all 1.5s ease-in-out;
-    z-index: 900;
-  }*/
-
-
-
-
+  }
 
   .leftdoor {
     height: 100vh;
     width: 50vw;
     display: flex;
     left: 0;
+    background: url('leftdoor.png') no-repeat center;
     position: absolute;
     background-color: #3f8807;
     transition: all 1.5s ease-in-out;
@@ -71,6 +62,7 @@ body {
     display: flex; 
     position: absolute;
     left: 50vw;
+    background: url('rightdoor.png') no-repeat center;
     flex: 1 1 0; 
     background-color: #2c5c07;
     transition: all 1.5s ease-in-out;

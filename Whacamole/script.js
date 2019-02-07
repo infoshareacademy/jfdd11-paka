@@ -14,7 +14,7 @@ function game() {
             document.body.classList.remove('timeRunningOut');
         }
         time.innerHTML = distance;
-        if (distance < 0) {
+        if (distance <= 0) {
 
             document.body.classList.add('gameOver');
 
@@ -25,7 +25,7 @@ function game() {
         else if (distance > 0) {
 
             document.body.classList.remove('gameOver');
-           
+
         }
     }, 1000);
 
@@ -80,7 +80,7 @@ function openSesame() {
     if (isOpen === false) {
         leftdoor.style.left = -50 + "vw";
         rightdoor.style.left = 100 + "vw";
-        playbutton.style.left = 93.8 + "vw";
+        playbutton.style.left = 103.8 + "vw";
         isOpen = true;
         header.style.opacity = 2;
         game()
@@ -91,15 +91,14 @@ function closeSesame() {
     if (isOpen === true) {
         leftdoor.style.left = 0 + "vw";
         rightdoor.style.left = 50 + "vw";
-        playbutton.style.left = 43.5 + "vw";
+        playbutton.style.left = 40.5 + "vw";
         isOpen = false;
         header.style.opacity = 0;
-
-    } 
+        clearInterval(cokolwiek);
+    }
 }
 
 
 playbutton.addEventListener("click", openSesame);
-underbutton.addEventListener("click", openSesame);
 
 setInterval(randomCat, randomTime(200, 1000));
