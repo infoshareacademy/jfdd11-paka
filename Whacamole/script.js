@@ -3,7 +3,7 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 
-function game() {
+function  startGame() {
     let distance = 8;
     let x = setInterval(function () {
         distance = distance - 1;
@@ -21,6 +21,7 @@ function game() {
             clearInterval(x);
             closeSesame();
             time.innerHTML = "Game over";
+        
         }
         else if (distance > 0) {
 
@@ -63,9 +64,8 @@ function game() {
     };
 
     setInterval(randomCat, 1000);
+   
 }
-
-
 
 /* Start game animation */
 let leftdoor = document.querySelector(".leftdoor");
@@ -83,7 +83,7 @@ function openSesame() {
         playbutton.style.left = 103.8 + "vw";
         isOpen = true;
         header.style.opacity = 2;
-        game()
+        startGame()
     }
 }
 
