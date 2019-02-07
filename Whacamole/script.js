@@ -2,11 +2,15 @@
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
-
-let distance = 60;
+function game() {
+let distance = 10;
 let level = 1;
 let x = setInterval(function () {
     distance = distance - level;
+
+    // HighScore
+    let startTime = Date.now();
+    localStorage.startTime = startTime
 
     if (distance < 10) {
         document.body.classList.add('timeRunningOut');
@@ -15,14 +19,18 @@ let x = setInterval(function () {
         document.body.classList.remove('timeRunningOut');
     }
     time.innerHTML = distance;
-    if (distance < 0) {
+    if (distance <= 0) {
 
         document.body.classList.add('gameOver');
+
+        let endTime = Date.now();
+        localStorage.endTime = endTime;
+        let yourScore = startTime - endTime;
+        console.log(yourScore);
 
         clearInterval(x);
         sesame();
         time.innerHTML = "Game over";
-
     }
     if (distance >= 65) {
         level += 1;
@@ -46,14 +54,14 @@ const catShake = function (event) {
 }
 
 const randomCat = function () {
-    
+
     const cats = Array.from(document.querySelectorAll('.cat'));
-    
-    
+
+
 
     let catIndex = parseInt(Math.random() * (cats.length));
-    
-    
+
+
     cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
 
     let cat = cats[catIndex];
@@ -65,18 +73,17 @@ const randomCat = function () {
     }
 
     cat.classList.add('up');
-    
+
 
     cat.parentElement.addEventListener('mouseup', catShake)
 }
 
 let showBadCat = function (event) {
-   // event.target.classList.remove('cat');
     event.target.classList.add('badCat');
 }
 
 setInterval(randomCat, randomTime(1000, 3000));
-
+}
 
 
 /* Start game animation */
@@ -96,6 +103,7 @@ function sesame() {
         underbutton.style.left = -6.5 + "vw";
         isOpen = true;
         header.style.opacity = 2;
+        game();
     }
     else {
         leftdoor.style.left = 0 + "vw";
