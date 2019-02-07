@@ -97,7 +97,8 @@ let playbutton = document.querySelector(".playbutton");
 let underbutton = document.querySelector(".underbutton");
 let header = document.querySelector(".header");
 let isOpen = false;
-let start = document.querySelector(".wrapper")
+let start = document.querySelector(".wrapper");
+
 
 function sesame() {
     if (isOpen === false) {
@@ -115,6 +116,7 @@ function sesame() {
         underbutton.style.left = 43.5 + "vw";
         isOpen = false;
         header.style.opacity = 0;
+        
     }
 }
 

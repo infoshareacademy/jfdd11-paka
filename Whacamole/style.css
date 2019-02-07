@@ -12,7 +12,17 @@ body {
     overflow: hidden;
 }
 
-/*playbutton*/
+
+.game {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr;
+    height: 78vh; 
+    overflow: hidden;
+    cursor: url(paw2.png), auto;
+}
+
+ 
 
 .wrapper {
     background-size: cover;
@@ -71,7 +81,7 @@ body {
     transition: all 3s ease-in-out;
     z-index: 500;
 }
-
+/*
 .game {
     display: flex;
     flex-wrap: wrap;
@@ -79,23 +89,107 @@ body {
     align-content: space-between;
     padding-top: 20vh;
 }
-
+*/
 .header {
-    height: 15vh;
+    height: 20vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Chango', cursive;
+    color : white;
+}
+
+.header h1 { 
+    text-shadow: 0 0 7px black;
+    font-size: 7vw;
     color: white;
-    transition: all 4s ease-in-out;
+    
 }
 
 .header h2 {
+    text-shadow: 0 0 7px black;
+    font-size: 10vw;
     font-family: 'Lato';
-    font-size: 300%;
-    margin-right: 15vw;
+    margin-right: 10vw;
     font-weight: 600;
 }
+
+ .box1{
+    right: -3%;
+ }
+
+ .box3{
+     left: -3%;
+ }
+
+ .box4{
+     right: -3%;
+    }
+
+ .box6{
+    left: -3%;
+ }
+
+ 
+
+@media screen and (max-width: 500px) and ( min-height: 600px){
+
+
+    body {
+        background-color: #4aaa00;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        font-size: 30px;
+    }
+
+    .game {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 78vh; 
+        cursor: url(paw2.png), auto;
+    }
+
+    .box{
+        Left: 10%;
+        Right: 0;
+        Top: 10%;
+        width: 100%;
+        height: 33vw;
+        background-position: bottom ;    
+        background-size: 100% 80%;
+        position: relative;  
+        cursor: url(paw2.png), auto;
+    }
+
+    .cat {
+        background: url(big-2024026_640.png) no-repeat  bottom center;
+        position: absolute;
+        width:  40vw;
+        height: 40vw;
+        bottom: 12%;     
+        left: 4%;
+        background-size: 57% 57%;
+        z-index: -1;
+        transition: all 0.4s ease-in-out;
+        cursor: url(paw2.png), auto;
+    }
+}
+
+
+
+.box {
+    background: url(bush.png)  no-repeat bottom center;
+    width: 33vw;
+    height: 20vw;
+    background-position: bottom ;    
+    background-size: 90% 65%;
+    position: relative;
+    bottom: -2%;
+    cursor: url(paw2.png), auto;
+ }
+/*
 
 .box {
     background: url(bush.png) 50% 124% no-repeat;
@@ -108,6 +202,22 @@ body {
     cursor: url(paw2.png), auto;
 }
 
+*/
+
+ .cat {
+    background: url(big-2024026_640.png) no-repeat  bottom center;
+    position: absolute;
+    width:  33vw;
+    height: 33vw;
+    bottom: 7%;    
+    left: -6%;
+    background-size: 37% 37%;
+    z-index: -1;
+    transition: bottom 1s ease-in-out;
+    cursor: url(paw2.png), auto;
+ }
+
+/*
 .cat {
     background: url(big-2024026_640.png) 91px 100% no-repeat;
     position: absolute;
@@ -115,11 +225,12 @@ body {
     height: 13vw;
     background-size: contain;
     z-index: -3;
-    /*transition: ease-in-out 0.2s; */
+    
     overflow: hidden;
     bottom: -27px;
     transition: bottom 1s ease-in-out;
 }
+*/              /*transition: ease-in-out 0.2s; */
 .cat.badCat {
     background-image: url(badcat.png);
 }
@@ -138,7 +249,7 @@ body {
 }
 
 .up {
-    bottom: 100px;
+    bottom: 37%;
 }
 
 @keyframes shake {
@@ -156,10 +267,6 @@ body {
     }
 }
 
-.box img {
-    width: 30vw;
-    height: auto;
-}
 
 .timeRunningOut {
     background: red;
