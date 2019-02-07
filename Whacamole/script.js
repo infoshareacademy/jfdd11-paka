@@ -2,15 +2,12 @@
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
+
 function game() {
 let distance = 10;
 let level = 1;
 let x = setInterval(function () {
     distance = distance - level;
-
-    // HighScore
-    let startTime = Date.now();
-    localStorage.startTime = startTime
 
     if (distance < 10) {
         document.body.classList.add('timeRunningOut');
@@ -23,10 +20,12 @@ let x = setInterval(function () {
 
         document.body.classList.add('gameOver');
 
-        let endTime = Date.now();
-        localStorage.endTime = endTime;
-        let yourScore = startTime - endTime;
-        console.log(yourScore);
+        // let startTime = Date.now();
+        // localStorage.startTime = startTime
+        // let endTime = Date.now();
+        // localStorage.endTime = endTime;
+        // let yourScore = startTime - endTime;
+        // console.log(yourScore);
 
         clearInterval(x);
         sesame();
