@@ -3,85 +3,84 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
 // let startTime = Date.now();
-        // localStorage.startTime = startTime
-        // let endTime = Date.now();
-        // localStorage.endTime = endTime;
-        // let yourScore = startTime - endTime;
-        // console.log(yourScore);
+// localStorage.startTime = startTime
+// let endTime = Date.now();
+// localStorage.endTime = endTime;
+// let yourScore = startTime - endTime;
+// console.log(yourScore);
 
-        
+
 function game() {
-let distance = 10;
-let level = 1;
-let x = setInterval(function () {
-    distance = distance - level;
+    let distance = 10;
+    let level = 1;
+    let x = setInterval(function () {
+        distance = distance - level;
 
-    if (distance < 10) {
-        document.body.classList.add('timeRunningOut');
+        if (distance < 10) {
+            document.body.classList.add('timeRunningOut');
 
-    } else {
-        document.body.classList.remove('timeRunningOut');
-    }
-    time.innerHTML = distance;
-    if (distance <= 0) {
+        } else {
+            document.body.classList.remove('timeRunningOut');
+        }
+        time.innerHTML = distance;
+        if (distance <= 0) {
 
-        document.body.classList.add('gameOver');
+            document.body.classList.add('gameOver');
 
-        clearInterval(x);
-        sesame();
-        time.innerHTML = "Game over";
-    }
-    if (distance >= 65) {
-        level += 1;
-    }
-}, 1000);
+            clearInterval(x);
+            sesame();
+            time.innerHTML = "Game over";
+        }
+        if (distance >= 65) {
+            level += 1;
+        }
+    }, 1000);
 
-function addMoreTime() {
-    distance += 2;
-}
-
-let randomTime = function (min, max) {
-    return (Math.random() * (max - min) + min);
-}
-
-
-const catShake = function (event) {
-    addMoreTime();
-    event.target.children[0].classList.add('shake');
-    event.target.children[0].classList.remove('up');
-    event.target.removeEventListener('mouseup', catShake);
-}
-
-const randomCat = function () {
-
-    const cats = Array.from(document.querySelectorAll('.cat'));
-
-
-
-    let catIndex = parseInt(Math.random() * (cats.length));
-
-
-    cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
-
-    let cat = cats[catIndex];
-
-    let randomBoolean = Math.random() >= 0.5;
-
-    if (randomBoolean === true) {
-        cat.classList.add('badCat');
+    function addMoreTime() {
+        distance += 2;
     }
 
-    cat.classList.add('up');
+    let randomTime = function (min, max) {
+        return (Math.random() * (max - min) + min);
+    }
+
+    const catShake = function (event) {
+        addMoreTime();
+        event.target.children[0].classList.add('shake');
+        event.target.children[0].classList.remove('up');
+        event.target.removeEventListener('mouseup', catShake);
+    }
+
+    const randomCat = function () {
+
+        const cats = Array.from(document.querySelectorAll('.cat'));
 
 
-    cat.parentElement.addEventListener('mouseup', catShake)
-}
 
-let showBadCat = function (event) {
-    event.target.classList.add('badCat');
-}
+        let catIndex = parseInt(Math.random() * (cats.length));
 
-setInterval(randomCat, randomTime(1000, 3000));
+
+        cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
+
+        let cat = cats[catIndex];
+
+        let randomBoolean = Math.random() >= 0.5;
+
+        if (randomBoolean === true) {
+            cat.classList.add('badCat');
+        }
+
+        cat.classList.add('up');
+
+
+        cat.parentElement.addEventListener('mouseup', catShake)
+    }
+
+    let showBadCat = function (event) {
+        event.target.classList.add('badCat');
+    }
+
+    setInterval(randomCat, randomTime(1000, 3000));
 }
 
 
