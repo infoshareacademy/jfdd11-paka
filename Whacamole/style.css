@@ -31,6 +31,23 @@ body {
     position: relative;
 }
 
+.instructions {
+    color: white;
+    font-family: Chango;
+    
+}
+h3 {
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 10vw;
+    
+}
+h3:p {
+    padding-top: 10vw;
+}
+
+
+
 .playbutton {
     height: 35vh;
     width: 23vw;
@@ -80,10 +97,10 @@ body {
 }
 */
 .header {
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 15vh;
+    
+    justify-content: center;
+    text-align: center;
     font-family: 'Chango', cursive;
     color : white;
 }
@@ -92,14 +109,15 @@ body {
     text-shadow: 0 0 7px black;
     font-size: 7vw;
     color: white;
-    
+    transition: opacity 4s ease-in-out;
+    position: relative;
 }
 
 .header h2 {
     text-shadow: 0 0 7px black;
     font-size: 10vw;
     font-family: 'Lato';
-    margin-right: 10vw;
+    font-size: 300%;
     font-weight: 600;
 }
 
@@ -258,8 +276,33 @@ body {
 
 
 .timeRunningOut {
-    background: red;
+    
+    animation-duration: 1s;
+    animation-name: blink2; 
+    animation-iteration-count: infinite;
+
 }
+
+@keyframes blink2 {
+    0% {
+        box-shadow:         inset -6px -10px 50px 44px  red;
+    }
+    
+    50% {
+        box-shadow:         inset -6px -10px 50px 44px  #000000;
+}
+    
+
+    100% {
+        box-shadow:         inset 6px -10px 50px 44px  red;
+    
+    }
+  }
+  .header__time {
+     
+      top: 20px;
+      right: 40px;
+  }
 
 .timeRunningOut .header__time {
     animation-duration: 1s;

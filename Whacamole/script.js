@@ -2,7 +2,7 @@
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
-
+function startGame() {
 let distance = 20;
 let level = 1;
 let x = setInterval(function () {
@@ -88,7 +88,7 @@ let showBadCat = function (event) {
 }
 
 setInterval(randomCat, randomTime(1000, 3000));
-
+}
 
 /* Start game animation */
 let leftdoor = document.querySelector(".leftdoor");
@@ -101,6 +101,8 @@ let start = document.querySelector(".wrapper");
 
 function openSesame() {
     if (isOpen === false) {
+        startGame();
+        document.body.classList.remove('gameOver');
         leftdoor.style.left = -50 + "vw";
         rightdoor.style.left = 100 + "vw";
         playbutton.style.left = 103.8 + "vw";
