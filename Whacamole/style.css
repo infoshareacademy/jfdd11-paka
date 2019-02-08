@@ -31,6 +31,23 @@ body {
     position: relative;
 }
 
+.instructions {
+    color: white;
+    font-family: Chango;
+    
+}
+h3 {
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 10vw;
+    
+}
+h3: p {
+    padding-top: 10vw;
+}
+
+
+
 .playbutton {
     height: 25vh;
     width: 13vw;
