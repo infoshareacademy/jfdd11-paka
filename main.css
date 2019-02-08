@@ -15,9 +15,18 @@ a {
 }
 
 .page {
-  width: 1200px;
+  
   padding: 0 3rem;
   margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1199 px){
+  .page {
+    width: 1200px;
+    padding: 0 3rem;
+    margin: 0 auto;
+  }
 }
 
 .header {
@@ -108,19 +117,47 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: stretch;
 }
+
 .features li {
   list-style: none outside none;
   margin: 0;
-  width: 40%;
+  width: 100%;
   margin: 2rem 0;
   padding: 2rem;
   color: #f36f5a;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+
+
+
+@media screen and (min-width: 1199 px){
+
+  .features {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .features li {
+    list-style: none outside none;
+    margin: 0;
+    width: 40%;
+    margin: 2rem 0;
+    padding: 2rem;
+    color: #f36f5a;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+
+}
+
 .features i {
   position: relative;
   top: -4rem;
