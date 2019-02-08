@@ -1,1 +1,1 @@
-# jfdd11-paka
+welcome, we are a group of dog lovers who is trying to create a website, game and applications dedicated to people who want to go on holiday, but have no one to leave their pets and feeding the dog while at work or walking with them. The application is to find a person willing to help and at the same time provide help for the other person.
