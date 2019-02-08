@@ -56,6 +56,9 @@ function game() {
         const cats = Array.from(document.querySelectorAll('.cat'));
 
 
+function addMoreTime(x) {
+    distance += x;
+}
 
         let catIndex = parseInt(Math.random() * (cats.length));
 
@@ -63,6 +66,22 @@ function game() {
         cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
 
         let cat = cats[catIndex];
+const catShake = function (event) {
+    if (event.target.children[0].classList.contains("badCat")){
+        addMoreTime(-20);
+        event.target.children[1].textContent = "-20";
+    } else {
+        addMoreTime(2);
+    event.target.children[1].textContent = "+2";
+    }
+    
+    setTimeout(function(){
+        event.target.children[1].textContent = "";
+    },500)
+    event.target.children[0].classList.add('shake');
+    event.target.children[0].classList.remove('up');
+    event.target.removeEventListener('mouseup', catShake);
+}
 
         let randomBoolean = Math.random() >= 0.5;
 
@@ -80,7 +99,8 @@ function game() {
         event.target.classList.add('badCat');
     }
 
-    setInterval(randomCat, randomTime(1000, 3000));
+
+setInterval(randomCat, randomTime(1000, 3000));
 }
 
 
@@ -91,7 +111,8 @@ let playbutton = document.querySelector(".playbutton");
 let underbutton = document.querySelector(".underbutton");
 let header = document.querySelector(".header");
 let isOpen = false;
-let start = document.querySelector(".wrapper")
+let start = document.querySelector(".wrapper");
+
 
 function sesame() {
     if (isOpen === false) {
@@ -110,6 +131,7 @@ function sesame() {
         underbutton.style.left = 43.5 + "vw";
         isOpen = false;
         header.style.opacity = 0;
+        
     }
 }
 
