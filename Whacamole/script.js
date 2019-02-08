@@ -2,7 +2,14 @@
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 
+// let startTime = Date.now();
+        // localStorage.startTime = startTime
+        // let endTime = Date.now();
+        // localStorage.endTime = endTime;
+        // let yourScore = startTime - endTime;
+        // console.log(yourScore);
 
+        
 function game() {
 let distance = 10;
 let level = 1;
@@ -19,13 +26,6 @@ let x = setInterval(function () {
     if (distance <= 0) {
 
         document.body.classList.add('gameOver');
-
-        // let startTime = Date.now();
-        // localStorage.startTime = startTime
-        // let endTime = Date.now();
-        // localStorage.endTime = endTime;
-        // let yourScore = startTime - endTime;
-        // console.log(yourScore);
 
         clearInterval(x);
         sesame();
@@ -113,7 +113,6 @@ function sesame() {
         header.style.opacity = 0;
     }
 }
-
 
 
 playbutton.addEventListener("click", sesame);
