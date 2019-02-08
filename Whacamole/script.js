@@ -108,7 +108,7 @@ function sesame() {
         underbutton.style.left = -6.5 + "vw";
         isOpen = true;
         header.style.opacity = 2;
-        game()
+        game();
     }
     else {
         leftdoor.style.left = 0 + "vw";
