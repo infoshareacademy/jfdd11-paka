@@ -4,6 +4,15 @@ const time = document.querySelector('.header__time');
 const goodSound = document.getElementById('goodSound');
 const badSound = document.getElementById('badSound');
 
+
+// let startTime = Date.now();
+// localStorage.startTime = startTime
+// let endTime = Date.now();
+// localStorage.endTime = endTime;
+// let yourScore = startTime - endTime;
+// console.log(yourScore);
+
+
 function startGame() {
 let distance = 20;
 let level = 1;
@@ -128,5 +137,3 @@ function closeSesame() {
 
 
 playbutton.addEventListener("click", openSesame);
-
-
