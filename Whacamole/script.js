@@ -1,6 +1,8 @@
 'use strict!'
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
+const goodSound = document.getElementById('goodSound');
+const badSound = document.getElementById('badSound');
 
 function startGame() {
 let distance = 20;
@@ -43,9 +45,11 @@ const catShake = function (event) {
     if (event.target.children[0].classList.contains("badCat")){
         addMoreTime(-20);
         event.target.children[1].textContent = "-20";
+        badSound.play();
     } else {
         addMoreTime(2);
     event.target.children[1].textContent = "+2";
+        goodSound.play();
     }
     
     setTimeout(function(){
@@ -87,7 +91,7 @@ let showBadCat = function (event) {
     event.target.classList.add('badCat');
 }
 
-setInterval(randomCat, randomTime(1000, 3000));
+setInterval(randomCat, randomTime(700, 2000));
 }
 
 /* Start game animation */
