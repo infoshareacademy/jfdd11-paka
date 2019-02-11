@@ -41,16 +41,12 @@ body {
     justify-content: space-evenly
 }
 .rules {
-    transform: translateY(-50%);
+    transform: translateY(-50%, -50%)
     transition: all 1.5s ease-in-out;
-    position: absolute;
     cursor: pointer;
-    z-index: 10003;
-    top: 50%;
-    left: 50%;
     background-color: beige;
     color: green;
-    width: 90vw;
+    width: 45vw;
     height: 90vh;
     border-radius: 10%;
     border: 2px solid green;
@@ -58,8 +54,11 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-     display: none;
-    
+    padding-top: 80px;
+    display: none;
+    padding-left: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 .rules p, .rules h1{
     padding-top: 50px;
@@ -97,7 +96,7 @@ body {
     background: url(playbutton.png) no-repeat center;
     background-size: contain;
     bottom: 40vh;
-    left: 43.5vw;
+    left: 32.5vw;
     position: absolute;
     border-radius: 50%;
     transition: all 1.5s ease-in-out;
