@@ -3,6 +3,15 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 const goodSound = document.getElementById('goodSound');
 const badSound = document.getElementById('badSound');
+const rules = document.querySelector('.rules');
+const rulesButton = document.querySelector('.instructionsGameRules');
+
+const showRules = function(){
+  rules.style.display = 'block';
+}
+
+rulesButton.addEventListener("click", showRules);
+
 
 
 // let startTime = Date.now();
