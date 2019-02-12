@@ -127,7 +127,7 @@ a {
 .features li {
   list-style: none outside none;
   margin: 0;
-  width: 45%;
+  width: 40%;
   margin: 2rem auto;
   padding: 2rem;
   color: #f36f5a;
@@ -278,4 +278,16 @@ h4 {
   .intro .page {
     background: white;
   }
+}
+
+@media screen and (max-width: 1199px) {
+
+
+  .page {
+    width: 100%;
+    padding: 0 3Rem;
+    margin: 0 auto;
+  }
+
+
 }
