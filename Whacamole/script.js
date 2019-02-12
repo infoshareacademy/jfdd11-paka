@@ -42,7 +42,7 @@ let level = 1;
 let x = setInterval(function () {
     distance = distance - level;
 
-    if (distance < 10) {
+    if (distance < 10 ) {
         document.body.classList.add('timeRunningOut');
 
     } else {
@@ -118,11 +118,6 @@ const randomCat = function () {
 
 }
 
-let showBadCat = function (event) {
-   // event.target.classList.remove('cat');
-    event.target.classList.add('badCat');
-}
-
 setInterval(randomCat, randomTime(700, 2000));
 }
 
@@ -143,6 +138,8 @@ function openSesame() {
         rightdoor.style.left = 100 + "vw";
         playbutton.style.left = 103.8 + "vw";
         isOpen = true;
+        time.innerHTML = "";
+        document.body.classList.remove('timeRunningOut')
     }
 }
 
@@ -153,6 +150,7 @@ function closeSesame() {
         rightdoor.style.left = 50 + "vw";
         playbutton.style.left = 32.5 + "vw";
         isOpen = false;
+        
     }
 }
 
