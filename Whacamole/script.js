@@ -114,7 +114,9 @@ const randomCat = function () {
     
     cat.classList.add('up');
    // cat.classList.add('badCat');
+   
     cat.parentElement.addEventListener('mouseup', catShake)
+
 
 }
 
@@ -153,8 +155,6 @@ function closeSesame() {
         
     }
 }
-
-
 
 
 playbutton.addEventListener("click", openSesame);

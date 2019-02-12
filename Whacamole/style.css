@@ -4,13 +4,14 @@
 }
 
 body {
-    background-color: #4aaa00;
+    background-color: #3c8b00;
     margin: 0 auto;
     width: 100vw;
     height: auto;
     font-size: 30px;
     font-family: Chango;
     overflow: hidden;
+    user-select: none;
 }
 
 
@@ -176,7 +177,7 @@ body {
     width: 33vw;
     height: 20vw;
     background-position: bottom ;    
-    background-size: 90% 65%;
+    background-size: 90% 67%;
     position: relative;
     bottom: -5%;
     cursor: url(paw2.png), auto;
@@ -189,10 +190,11 @@ body {
     height: 33vw;
     bottom: 7%;    
     left: -6%;
-    background-size: 37% 37%;
+    background-size: 37% 33%;
     z-index: -1;
     transition: bottom 1s ease-in-out;
     cursor: url(paw2.png), auto;
+    overflow: hidden;
  }
 
 .cat.badCat {
@@ -206,14 +208,14 @@ body {
     perspective: 1000px;
 }
 .score {
-    font-size: 150px;
+    font-size: 8vw;
     text-align: center;
     color: white;
    
 }
 
 .up {
-    bottom: 37%;
+    bottom: 47%;
 }
 
 @keyframes shake {
@@ -293,11 +295,12 @@ body {
 
 
     body {
-        background-color: #4aaa00;
+        background-color: #3c8b00;
         margin: 0 auto;
         width: 100%;
         height: auto;
         font-size: 30px;
+        user-select: none;
     }
 
     .game {
@@ -314,7 +317,7 @@ body {
         width: 33vw;
         height: 20vw;
         background-position: bottom ;    
-        background-size: 110% 85%;
+        background-size: 110% 87%;
         position: relative;
         bottom: -15%;
         cursor: url(paw2.png), auto;
@@ -327,21 +330,21 @@ body {
         height: 33vw;
         bottom: 8%;    
         left: -6%;
-        background-size: 47% 47%;
+        background-size: 47% 43%;
         z-index: -1;
         transition: all 0.4s ease-in-out;
         cursor: url(paw2.png), auto;
     }
 
     .score {
-        font-size: 60px;
+        font-size: 10vw;
         text-align: center;
         color: white;
        
     }
 
      .up {
-        bottom: 47%;
+        bottom: 48%;
     }
 
     .timeRunningOut .header__time {
