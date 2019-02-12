@@ -6,9 +6,10 @@
 body {
     background-color: #4aaa00;
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
     height: auto;
     font-size: 30px;
+    font-family: Chango;
     overflow: hidden;
 }
 
@@ -39,8 +40,29 @@ body {
     width: 44vw;
     justify-content: space-evenly
 }
-.instructions p {
+.rules {
+    transform: translateY(-50%, -50%)
+    transition: all 1.5s ease-in-out;
+    cursor: pointer;
+    background-color: beige;
+    color: green;
+    width: 45vw;
+    height: 90vh;
+    border-radius: 10%;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
     display: none;
+    padding-left: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.rules p, .rules h1{
+    padding-top: 50px;
+    z-index: 10002;
 }
 .instructions button {
     text-align: center;
@@ -57,7 +79,6 @@ body {
     width: 200px;
     font-size: 15px;
 }
-}
 .instructionsGameRules:hover{
   transform: scale(1.2);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
@@ -68,14 +89,14 @@ body {
 }
 
 .playbutton {
-    height: 25vh;
-    width: 13vw;
+    height: 35vh;
+    width: 23vw;
     background-size: contain;
     cursor: pointer;
     background: url(playbutton.png) no-repeat center;
     background-size: contain;
     bottom: 40vh;
-    left: 43.5vw;
+    left: 32.5vw;
     position: absolute;
     border-radius: 50%;
     transition: all 1.5s ease-in-out;
@@ -190,9 +211,9 @@ body {
     }
 
     .cat {
-        background: url(big-2024026_640.png) no-repeat  bottom center;
+        background: url(big-2024026_640.png) no-repeat bottom center;
         position: absolute;
-        width:  40vw;
+        width: 40vw;
         height: 40vw;
         bottom: 12%;     
         left: 4%;

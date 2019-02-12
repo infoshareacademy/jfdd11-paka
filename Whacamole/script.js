@@ -3,6 +3,29 @@ const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
 const goodSound = document.getElementById('goodSound');
 const badSound = document.getElementById('badSound');
+const rules = document.querySelector('.rules');
+const rulesButton = document.querySelector('.instructionsGameRules');
+
+
+const hideRules = function(){
+    rules.style.display = 'none';
+    if (rules.style.display === 'none'){
+        rulesButton.removeEventListener("click", hideRules);
+        rulesButton.addEventListener("click", showRules);
+    }
+}
+
+const showRules = function(){
+  rules.style.display = 'block';
+    
+if (rules.style.display === 'block') {
+        rules.addEventListener("click", hideRules);
+        rulesButton.addEventListener("click", hideRules);
+    }
+}
+
+rulesButton.addEventListener("click", showRules);
+
 
 
 // let startTime = Date.now();
@@ -128,7 +151,7 @@ function closeSesame() {
     if (isOpen === true) {
         leftdoor.style.left = 0 + "vw";
         rightdoor.style.left = 50 + "vw";
-        playbutton.style.left = 43.5 + "vw";
+        playbutton.style.left = 32.5 + "vw";
         isOpen = false;
     }
 }
