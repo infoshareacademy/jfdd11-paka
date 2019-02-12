@@ -1,8 +1,42 @@
 'use strict!'
 const box = document.querySelectorAll('.box');
 const time = document.querySelector('.header__time');
+const goodSound = document.getElementById('goodSound');
+const badSound = document.getElementById('badSound');
+const rules = document.querySelector('.rules');
+const rulesButton = document.querySelector('.instructionsGameRules');
 
-function game() {
+
+const hideRules = function(){
+    rules.style.display = 'none';
+    if (rules.style.display === 'none'){
+        rulesButton.removeEventListener("click", hideRules);
+        rulesButton.addEventListener("click", showRules);
+    }
+}
+
+const showRules = function(){
+  rules.style.display = 'block';
+    
+if (rules.style.display === 'block') {
+        rules.addEventListener("click", hideRules);
+        rulesButton.addEventListener("click", hideRules);
+    }
+}
+
+rulesButton.addEventListener("click", showRules);
+
+
+
+// let startTime = Date.now();
+// localStorage.startTime = startTime
+// let endTime = Date.now();
+// localStorage.endTime = endTime;
+// let yourScore = startTime - endTime;
+// console.log(yourScore);
+
+
+function startGame() {
 let distance = 20;
 let level = 1;
 let x = setInterval(function () {
@@ -20,8 +54,9 @@ let x = setInterval(function () {
         document.body.classList.add('gameOver');
 
         clearInterval(x);
-        sesame();
+        closeSesame();
         time.innerHTML = "Game over";
+        
 
     }
     if (distance >= 65) {
@@ -42,9 +77,11 @@ const catShake = function (event) {
     if (event.target.children[0].classList.contains("badCat")){
         addMoreTime(-20);
         event.target.children[1].textContent = "-20";
+        badSound.play();
     } else {
         addMoreTime(2);
     event.target.children[1].textContent = "+2";
+        goodSound.play();
     }
     
     setTimeout(function(){
@@ -86,44 +123,40 @@ let showBadCat = function (event) {
     event.target.classList.add('badCat');
 }
 
-setInterval(randomCat, randomTime(1000, 3000));
+setInterval(randomCat, randomTime(700, 2000));
 }
-
 
 /* Start game animation */
 let leftdoor = document.querySelector(".leftdoor");
 let rightdoor = document.querySelector(".rightdoor");
 let playbutton = document.querySelector(".playbutton");
-let underbutton = document.querySelector(".underbutton");
 let header = document.querySelector(".header");
 let isOpen = false;
 let start = document.querySelector(".wrapper");
 
 
-function sesame() {
+function openSesame() {
     if (isOpen === false) {
+        startGame();
+        document.body.classList.remove('gameOver');
         leftdoor.style.left = -50 + "vw";
         rightdoor.style.left = 100 + "vw";
-        playbutton.style.left = 93.8 + "vw";
-        underbutton.style.left = -6.5 + "vw";
+        playbutton.style.left = 103.8 + "vw";
         isOpen = true;
-        header.style.opacity = 2;
-        game();
     }
-    else {
+}
+
+
+function closeSesame() {
+    if (isOpen === true) {
         leftdoor.style.left = 0 + "vw";
         rightdoor.style.left = 50 + "vw";
-        playbutton.style.left = 43.5 + "vw";
-        underbutton.style.left = 43.5 + "vw";
+        playbutton.style.left = 32.5 + "vw";
         isOpen = false;
-        header.style.opacity = 0;
-        
     }
 }
 
 
 
-playbutton.addEventListener("click", sesame);
-underbutton.addEventListener("click", sesame);
 
-setInterval(randomCat, randomTime(500, 1000));
+playbutton.addEventListener("click", openSesame);
