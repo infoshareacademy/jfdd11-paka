@@ -290,7 +290,6 @@ body {
 */
 .header {
     height: 15vh;
-    
     justify-content: center;
     text-align: center;
     font-family: 'Chango', cursive;
@@ -298,7 +297,7 @@ body {
 }
 .header h1 { 
     text-shadow: 0 0 7px black;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
     transition: opacity 4s ease-in-out;
     position: relative;
