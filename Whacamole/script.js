@@ -165,22 +165,6 @@ playbutton.addEventListener("click", openSesame);
 
 // LEADERBOARD
 
-function leaderboard() {
-
-    let players = [
-        { name: "Ania", score: 201 },
-        { name: "Zupa", score: 943 },
-        { name: "Grzyb", score: 79 }
-    ]
-
-    let playersSorted = players.sort(function (a, b) {
-        if (Number(a.score) < Number(b.score)) return -1;
-        if (Number(a.score) > Number(b.score)) return 1;
-        return 0;
-    });
-
-}
-
 userName.addEventListener('submit', event => { 
    event.preventDefault();
    const inputValue = event.target.name.value;
