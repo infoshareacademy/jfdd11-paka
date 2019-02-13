@@ -52,6 +52,7 @@ body {
     padding-top: 80px;
     padding-left: 50px;
     top: 5%;
+    text-align: left;
 }
 
 .rulesVisible{
@@ -69,14 +70,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding-top: 80px;
-    padding-left: 50px;
+    text-shadow: 2px 2px 4px #000000;
 }
-.rules p, .rules h1{
-    padding-top: 50px;
+.rules p{
+    padding-top: 40px;
     z-index: 10002;
 }
+.rules h1{
+    padding-top 0px;
+    padding-bottom: 20px
+}
+.rules p {
+    text-align: left;
+}
+
 .instructions button {
     text-align: center;
     background: #4aaa00;
@@ -85,10 +92,11 @@ body {
     padding-bottom: 15px;
     color: white;
     border-radius: 1rem;
-    font-family: "Chango", cursive;
+    font-family: "Chango";
     text-transform: uppercase;
     transition: transform .2s, box-shadow .2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px black;
     width: 200px;
     font-size: 15px;
 }
@@ -103,36 +111,55 @@ body {
 /* LEADERBOARD */
     .userName {
         text-align: center;
-        background-color:  #5F4A4A;
     }
+.userInputName{
+    font-size: 15px;
+    color: #323232;
+    padding: 10px 0 5px 0;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #afcc7a;
+    width: 120px;
+}
     .close{
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 3%;
+    top: 8px;
     cursor: pointer;
     }
     .nameButton {   
     text-align: center;
-    background: #4aaa00;
+    background: #74b456;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 10px;
+        margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     color: white;
     border-radius: 1rem;
     font-family: "Chango", cursive;
     text-transform: uppercase;
     transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 1px 1px #006344;
     width: 200px;
     font-size: 15px;
+    text-shadow: 1px 2px 1px #000000;
     }
+.nameButton:hover{
+    transform: scale(1.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
 
     .rankingWrapper{
         position: absolute;
         left: -1000%;
-    }
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+        font-family: font-family: 'Catamaran', sans-serif;
+        font-size: 26px;
+}
 
 .rankingVisible{
         transition: all 3s ease-in-out;
@@ -140,22 +167,44 @@ body {
         z-index: 10001;
         width: 100vw;
         height: 100vh;
-        background-color: #5F4A4A;
+        background-image: url('rightdoor.png');
+        background-size: cover;
         margin: 0 auto;
-        padding-top: 50px;
+        padding-top: 25px;
     }
-.rankingA {
+.rankingA
+{
     text-align: center;
     padding-bottom: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+.top3{
+    color: white;
+    text-shadow: 2px 2px 4px #005239;
+    font-size: 33px;
+}
+.oops {
+    font-size: 40px;
+}
+.userInput{
+    margin-bottom: 20px;
 }
     table{
+        border-color: #005239;
         color:white;
         border-spacing: 0;
-        margin: 0 auto;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 2px 2px 4px black;
+        font-size: 30px;
       }
       
       tr:first-child{
-        background-color: #006344;
+        background-color: #91b751;
+          color: #005239;
+          text-shadow: 2px 1px 2px white;
       }
       
       tr:nth-child(2) > td{
@@ -163,7 +212,8 @@ body {
       }
       
       tr{
-        background-color: #5F4A4A;
+        background-color: #006344;
+        text-shadow: 2px 2px 4px #000000;
       }
       
       th, td{
@@ -171,23 +221,24 @@ body {
         padding: .5em 1.5em;
         text-align: center;
         border-width: 1px 0;
-        border-color: gray;
+        border-color: #005239;
         border-style: solid;
-      }
-      
-      th{
-        border-bottom-width: 1px;
       }
       
       th:nth-child(even){
-        border-width: 0 4px;
-        border-color: darken(gray, 20%);
+        border-width: 0px px;
+        border-color: #005239;
         border-style: solid;
       }
+ th{
+        border-bottom-width: 1px;
+        border-top-width: 0px;
+      }
+      
       
       td:nth-child(even){
-        border-width: 1px 4px;
-        border-color: gray;
+        border-width: 1px 2px;
+        border-color: #005239;
         border-style: solid;
       }
 .playbutton {
@@ -246,7 +297,7 @@ body {
 }
 .header h1 { 
     text-shadow: 0 0 7px black;
-    font-size: 7vw;
+    font-size: 4vw;
     color: white;
     transition: opacity 4s ease-in-out;
     position: relative;

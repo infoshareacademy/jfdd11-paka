@@ -57,7 +57,7 @@ function startGame() {
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
             scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.'
-
+            scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
                 leaderboardTAble.style.display = 'none';
