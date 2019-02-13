@@ -12,6 +12,9 @@ const userName = document.querySelector('.userName');
 const closeButton = document.querySelector('.close');
 const scoreA = document.querySelector('.yourScore');
 let myScore = 0;
+let sortedScores;
+let myPosition;
+const letsCheck = document.querySelector('.letsCheck');
 
 
 
@@ -56,7 +59,8 @@ function startGame() {
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
-            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.'
+            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.';
+    
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
@@ -188,7 +192,7 @@ userName.addEventListener('submit', event => {
     .then(objects => {
     let sortedObjects = Object.entries(objects).map(object => ({ name: object[1].name, score: object[1].score })).sort((a,b) => b.score - a.score);
     let sortedPlayers = sortedObjects.map(objects => objects.name);
-    let sortedScores = sortedObjects.map(objects => objects.score);
+     sortedScores = sortedObjects.map(objects => objects.score);
 
     console.log(sortedPlayers);
     console.log(sortedScores);
@@ -207,6 +211,13 @@ userName.addEventListener('submit', event => {
     thirdScore.textContent = sortedScores[2];
     let thirdPlayer = document.querySelector('.thirdPlace');
     thirdPlayer.textContent = sortedPlayers[2];
+    myPosition = sortedScores.findIndex(score => score === myScore) + 1;
+    // let positionNode = document.createElement('p');
+    // positionNode.textContent = 'Your position in the ranking: ' + myPosition;
+    userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+    // letsCheck.appendChild(positionNode);
+    return myPosition;
+
 
 })
 }
