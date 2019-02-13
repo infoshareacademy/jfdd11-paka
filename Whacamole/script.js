@@ -60,7 +60,7 @@ function startGame() {
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
             scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.';
-    
+            updateScores();
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
@@ -173,6 +173,7 @@ userName.addEventListener('submit', event => {
    event.preventDefault();
    const inputValue = event.target.name.value;
    addNewScore(inputValue);
+   userName.classList.add('clicked');
 })
 
  function addNewScore(name) {
@@ -211,11 +212,13 @@ userName.addEventListener('submit', event => {
     thirdScore.textContent = sortedScores[2];
     let thirdPlayer = document.querySelector('.thirdPlace');
     thirdPlayer.textContent = sortedPlayers[2];
+
     myPosition = sortedScores.findIndex(score => score === myScore) + 1;
-    // let positionNode = document.createElement('p');
-    // positionNode.textContent = 'Your position in the ranking: ' + myPosition;
-    userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
-    // letsCheck.appendChild(positionNode);
+
+    if (userName.classList.contains('clicked') === true) {
+        userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+    }
+    
     return myPosition;
 
 
