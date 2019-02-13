@@ -5,20 +5,31 @@ const goodSound = document.getElementById('goodSound');
 const badSound = document.getElementById('badSound');
 const rules = document.querySelector('.rules');
 const rulesButton = document.querySelector('.instructionsGameRules');
+let startTime;
+let endTime;
+const leaderboardTAble = document.querySelector('.rankingWrapper');
+const userName = document.querySelector('.userName');
+const closeButton = document.querySelector('.close');
+const scoreA = document.querySelector('.yourScore');
+let myScore = 0;
+let sortedScores;
+let myPosition;
+const letsCheck = document.querySelector('.letsCheck');
 
 
-const hideRules = function(){
-    rules.style.display = 'none';
-    if (rules.style.display === 'none'){
+
+const hideRules = function () {
+    rules.classList.remove('rulesVisible');
+    if (rules.classList.contains('rulesVisible') === false) {
         rulesButton.removeEventListener("click", hideRules);
         rulesButton.addEventListener("click", showRules);
     }
 }
 
-const showRules = function(){
-  rules.style.display = 'block';
-    
-if (rules.style.display === 'block') {
+const showRules = function () {
+    rules.classList.add('rulesVisible');
+
+    if (rules.classList.contains('rulesVisible')) {
         rules.addEventListener("click", hideRules);
         rulesButton.addEventListener("click", hideRules);
     }
@@ -26,101 +37,98 @@ if (rules.style.display === 'block') {
 
 rulesButton.addEventListener("click", showRules);
 
-
-
-// let startTime = Date.now();
-// localStorage.startTime = startTime
-// let endTime = Date.now();
-// localStorage.endTime = endTime;
-// let yourScore = startTime - endTime;
-// console.log(yourScore);
-
-
 function startGame() {
-let distance = 20;
-let level = 1;
-let x = setInterval(function () {
-    distance = distance - level;
+    let distance = 20;
+    let level = 1;
+    startTime = Date.now();
+    let x = setInterval(function () {
+        distance = distance - level;
 
-    if (distance < 10 ) {
-        document.body.classList.add('timeRunningOut');
+        if (distance < 10) {
+            document.body.classList.add('timeRunningOut');
 
-    } else {
-        document.body.classList.remove('timeRunningOut');
+        } else {
+            document.body.classList.remove('timeRunningOut');
+        }
+        time.innerHTML = distance;
+        if (distance < 0) {
+
+            document.body.classList.add('gameOver');
+            endTime = Date.now();
+            clearInterval(x);
+            time.innerHTML = "Game over";
+            leaderboardTAble.classList.add('rankingVisible');
+            myScore = Math.round((endTime - startTime) / 1000);
+            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.';
+            updateScores();
+            scoreA.style.color = 'white'
+            closeButton.addEventListener("click", function () {
+                closeSesame();
+                leaderboardTAble.style.display = 'none';
+            })
+
+        }
+        if (distance >= 65) {
+            level += 1;
+        }
+    }, 1000);
+
+    function addMoreTime(x) {
+        distance += x;
     }
-    time.innerHTML = distance;
-    if (distance < 0) {
 
-        document.body.classList.add('gameOver');
+    let randomTime = function (min, max) {
+        return (Math.random() * (max - min) + min);
+    }
 
-        clearInterval(x);
-        closeSesame();
-        time.innerHTML = "Game over";
-        
+
+    const catShake = function (event) {
+        if (event.target.children[0].classList.contains("badCat")) {
+            addMoreTime(-20);
+            event.target.children[1].textContent = "-20";
+            badSound.play();
+        } else {
+            addMoreTime(2);
+            event.target.children[1].textContent = "+2";
+            goodSound.play();
+        }
+
+        setTimeout(function () {
+            event.target.children[1].textContent = "";
+        }, 500)
+        event.target.children[0].classList.add('shake');
+        event.target.children[0].classList.remove('up');
+        event.target.removeEventListener('mouseup', catShake);
+    }
+
+    const randomCat = function () {
+
+        const cats = Array.from(document.querySelectorAll('.cat'));
+
+
+
+        let catIndex = parseInt(Math.random() * (cats.length));
+
+
+        cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
+
+        let cat = cats[catIndex];
+
+        let random_boolean = Math.random() >= 0.5;
+
+        if (random_boolean === true) {
+            cat.classList.add('badCat');
+
+        }
+
+
+        cat.classList.add('up');
+        // cat.classList.add('badCat');
+        cat.parentElement.addEventListener('mouseup', catShake)
 
     }
-    if (distance >= 65) {
-        level += 1;
-    }
-}, 1000);
 
-function addMoreTime(x) {
-    distance += x;
-}
-
-let randomTime = function (min, max) {
-    return (Math.random() * (max - min) + min);
-}
-
-
-const catShake = function (event) {
-    if (event.target.children[0].classList.contains("badCat")){
-        addMoreTime(-20);
-        event.target.children[1].textContent = "-20";
-        badSound.play();
-    } else {
-        addMoreTime(2);
-    event.target.children[1].textContent = "+2";
-        goodSound.play();
-    }
-    
-    setTimeout(function(){
-        event.target.children[1].textContent = "";
-    },500)
-    event.target.children[0].classList.add('shake');
-    event.target.children[0].classList.remove('up');
-    event.target.removeEventListener('mouseup', catShake);
-}
-
-const randomCat = function () {
-    
-    const cats = Array.from(document.querySelectorAll('.cat'));
-    
-    
-
-    let catIndex = parseInt(Math.random() * (cats.length));
-    
-    
-    cats.forEach(element => element.classList.remove('up', 'shake','badCat'));
-
-    let cat = cats[catIndex];
-
-    let random_boolean = Math.random() >= 0.5;
-
-    if (random_boolean === true) {
-        cat.classList.add('badCat');
-        
-    }
-    
-    cat.classList.add('up');
-   // cat.classList.add('badCat');
-   
-    cat.parentElement.addEventListener('mouseup', catShake)
-
-
-}
-
-setInterval(randomCat, randomTime(700, 2000));
+    setInterval(randomCat, randomTime(700, 2000));
 }
 
 /* Start game animation */
@@ -152,9 +160,68 @@ function closeSesame() {
         rightdoor.style.left = 50 + "vw";
         playbutton.style.left = 32.5 + "vw";
         isOpen = false;
-        
+        endTime = Date.now();
     }
 }
 
 
 playbutton.addEventListener("click", openSesame);
+
+// LEADERBOARD
+
+userName.addEventListener('submit', event => { 
+   event.preventDefault();
+   const inputValue = event.target.name.value;
+   addNewScore(inputValue);
+   userName.classList.add('clicked');
+})
+
+ function addNewScore(name) {
+   fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json', {
+     method: 'POST', 
+     body: JSON.stringify({ 
+       name: name,
+       score: myScore
+     }) 
+     })
+     .then(() => updateScores())
+ }
+ 
+ function updateScores(){
+    fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json')
+    .then(res => res.json())
+    .then(objects => {
+    let sortedObjects = Object.entries(objects).map(object => ({ name: object[1].name, score: object[1].score })).sort((a,b) => b.score - a.score);
+    let sortedPlayers = sortedObjects.map(objects => objects.name);
+     sortedScores = sortedObjects.map(objects => objects.score);
+
+    console.log(sortedPlayers);
+    console.log(sortedScores);
+
+    let firstScore = document.querySelector('.firstScore');
+    firstScore.textContent = sortedScores[0];
+    let firstPlayer = document.querySelector('.firstPlace');
+    firstPlayer.textContent = sortedPlayers[0];
+
+    let secondScore = document.querySelector('.secondScore');
+    secondScore.textContent = sortedScores[1];
+    let secondPlayer = document.querySelector('.secondPlace');
+    secondPlayer.textContent = sortedPlayers[1];
+
+    let thirdScore = document.querySelector('.thirdScore');
+    thirdScore.textContent = sortedScores[2];
+    let thirdPlayer = document.querySelector('.thirdPlace');
+    thirdPlayer.textContent = sortedPlayers[2];
+
+    myPosition = sortedScores.findIndex(score => score === myScore) + 1;
+
+    if (userName.classList.contains('clicked') === true) {
+        userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+    }
+    
+    return myPosition;
+
+
+})
+}
+    

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +8,67 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Chango|Lato" rel="stylesheet">
 </head>
-
 <body>
     <div class="wrapper">
+          <div class="rankingWrapper">
+          <div class="rankingA"><a class="oops">Oops! Sorry...</a><br><br>
+           <a class="yourScore"></a></div>
+            <div class="close">X</div>
+        <div class="userInput">
+            <form class="userName">
+                <p class="letsCheck">Let's see how you rank!</p><br>
+                <input class="userInputName" placeholder="Your name" type="text" name="name">
+                <input class="nameButton" type="submit" value="Submit">
+              </form> 
+        </div>
+        <div class="rankTable">
+        <a class="top3">TOP 3</a>
+        <table class="table">
+            <tbody>
+              <tr>
+                  <th>Rank</th>
+                  <th>Username</th>
+                  <th>Seconds</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td class="firstPlace"></td>
+                <td class="firstScore"></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="secondPlace"></td>
+                <td class="secondScore"></td>
+              </tr>
+               <tr>
+                <td>3</td>
+                <td class="thirdPlace"></td>
+                <td class="thirdScore"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
         <div class="leftdoor">
             <div class="instructions">
                     <button class="instructionsGameRules">Game rules</button>
-                    <button class="backToSite">back to site</button> 
+                    <button class="backToSite">Go back</button> 
                 </div>
                     
         </div>
         <div class="playbutton"></div>
         <div class="rightdoor">
               <div class="rules">
-                   <h1>Game Rules</h1>
+                   <h1>How To Play</h1>
                     <p>1. Grab your mouse</p>
                     <p>2. If you see the cat - click away!</p>
                     <p>3. Watch out for the gangster cat. He is trouble.</p>
            </div>
         </div>
-
         <div class="header">
             <h1>Catch-A-Cat!</h1>
             <h2 class="header__time">0</h2>
         </div>
-
         <div class="game">
             <div class="box box1">
                 <div class="cat"></div>
@@ -63,7 +98,7 @@
         <audio src="Blop-Mark_DiAngelo-79054334.mp3" id="goodSound"></audio>
         <audio src="Commedy_Punch-Poorna_RAo-1017287436.mp3" id="badSound"></audio>
     </div>
+    
     <script src="script.js"></script>
 </body>
-
-</html>
+</html>  

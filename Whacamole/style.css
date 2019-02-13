@@ -2,19 +2,16 @@
     box-sizing: border-box;
     margin: 0;
 }
-
 body {
     background-color: #3c8b00;
     margin: 0 auto;
     width: 100vw;
     height: auto;
     font-size: 30px;
-    font-family: Chango;
+    font-family: 'Chango';
     overflow: hidden;
     user-select: none;
 }
-
-
 .game {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -23,17 +20,15 @@ body {
     overflow: hidden;
     cursor: url(paw2.png), auto;
 }
-
 .wrapper {
     background-size: cover;
     height: 100vh;
     width: 100%;
     position: relative;
 }
-
 .instructions {
     color: white;
-    font-family: Chango;
+    font-family: 'Chango';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,12 +36,34 @@ body {
     width: 44vw;
     justify-content: space-evenly
 }
-.rules {
+.rules{
+    transition: all 0.5s ease-in-out;
     transform: translateY(-50%, -50%);
-    transition: all 1.5s ease-in-out;
-    cursor: pointer;
-    background-color: beige;
+     background: linear-gradient(45deg, rgba(245, 241, 210, 0.3) 0%, rgba(223, 219, 195, 0.66) 52%, rgb(79, 165, 82) 100%);
     color: green;
+    width: 45vw;
+    height: 90vh;
+    border-radius: 10%;
+    position: absolute;
+    left: 100%;
+    width: 45vw;
+    height: 90vh;
+    border-radius: 10%;
+    border: 2px solid #005239;
+    padding-top: 80px;
+    padding-left: 50px;
+    top: 5%;
+    text-align: left;
+}
+
+.rulesVisible{
+    transform: translateY(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    left: 7%;
+    top: 5%;
+    cursor: pointer;
+    background: linear-gradient(45deg, rgba(245, 241, 210, 0.3) 0%, rgba(223, 219, 195, 0.66) 52%, rgb(79, 165, 82) 100%);
+    color: #3b6549;
     width: 45vw;
     height: 90vh;
     border-radius: 10%;
@@ -54,17 +71,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding-top: 80px;
-    display: none;
-    padding-left: 50px;
-    margin-left: 50px;
-    margin-top: 30px;
+    text-shadow: 2px 2px 4px white;
 }
-.rules p, .rules h1{
-    padding-top: 50px;
+.rules p{
+    padding-top: 40px;
     z-index: 10002;
 }
+.rules h1{
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+.rules p {
+    text-align: left;
+}
+
 .instructions button {
     text-align: center;
     background: #4aaa00;
@@ -73,12 +93,14 @@ body {
     padding-bottom: 15px;
     color: white;
     border-radius: 1rem;
-    font-family: "Chango", cursive;
+    font-family: "Chango", Chango;
     text-transform: uppercase;
     transition: transform .2s, box-shadow .2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px black;
     width: 200px;
     font-size: 15px;
+    border: #3b6549;
 }
 .instructionsGameRules:hover{
   transform: scale(1.2);
@@ -88,7 +110,139 @@ body {
  transform: scale(1.2);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
+/* LEADERBOARD */
+    .userName {
+        text-align: center;
+    }
+.userInputName{
+    font-size: 15px;
+    color: #323232;
+    padding: 10px 0 5px 0;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #afcc7a;
+    width: 120px;
+}
+    .close{
+    position: absolute;
+    right: 3%;
+    top: 8px;
+    cursor: pointer;
+    }
+    .nameButton {   
+    text-align: center;
+    background: #74b456;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 1rem;
+    font-family: "Chango", cursive;
+    text-transform: uppercase;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 2px 1px 1px #006344;
+    width: 200px;
+    font-size: 15px;
+    text-shadow: 1px 2px 1px #000000;
+    }
+.nameButton:hover{
+    transform: scale(1.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
 
+    .rankingWrapper{
+        position: absolute;
+        left: -1000%;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+        font-family: 'Chango';
+        font-size: 26px;
+}
+
+.rankingVisible{
+        transition: all 3s ease-in-out;
+        left: 0%;
+        z-index: 10001;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('rightdoor.png');
+        background-size: cover;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+.rankingA
+{
+    text-align: center;
+    padding-bottom: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+.top3{
+    color: white;
+    text-shadow: 2px 2px 4px #005239;
+    font-size: 33px;
+}
+.oops {
+    font-size: 40px;
+}
+.userInput{
+    margin-bottom: 20px;
+}
+    table{
+        border-color: #005239;
+        color:white;
+        border-spacing: 0;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 2px 2px 4px black;
+        font-size: 30px;
+      }
+      
+      tr:first-child{
+        background-color: #91b751;
+          color: #005239;
+          text-shadow: 2px 1px 2px white;
+      }
+      
+      tr:nth-child(2) > td{
+        border-top-width: 0;
+      }
+      
+      tr{
+        background-color: #006344;
+        text-shadow: 2px 2px 4px #000000;
+      }
+      
+      th, td{
+        margin: 0;
+        padding: .5em 1.5em;
+        text-align: center;
+        border-width: 1px 0;
+        border-color: #005239;
+        border-style: solid;
+      }
+      
+      th:nth-child(even){
+        border-width: 0px px;
+        border-color: #005239;
+        border-style: solid;
+      }
+ th{
+        border-bottom-width: 1px;
+        border-top-width: 0px;
+      }
+      
+      
+      td:nth-child(even){
+        border-width: 1px 2px;
+        border-color: #005239;
+        border-style: solid;
+      }
 .playbutton {
     height: 35vh;
     width: 23vw;
@@ -103,7 +257,6 @@ body {
     transition: all 1.5s ease-in-out;
     z-index: 1000;
 }
-
 .leftdoor {
     height: 100vh;
     width: 50vw;
@@ -115,7 +268,6 @@ body {
     transition: all 1.5s ease-in-out;
     z-index: 500;
 }
-
 .rightdoor {
     height: 100%;
     width: 50vw;
@@ -131,21 +283,18 @@ body {
 
 .header {
     height: 15vh;
-    
     justify-content: center;
     text-align: center;
     font-family: 'Chango', cursive;
     color : white;
 }
-
 .header h1 { 
     text-shadow: 0 0 7px black;
-    font-size: 7vw;
+    font-size: 3vw;
     color: white;
     transition: opacity 4s ease-in-out;
     position: relative;
 }
-
 .header h2 {
     text-shadow: 0 0 7px black;
     
@@ -153,19 +302,15 @@ body {
     font-size: 10vh;
     font-weight: 600;
 }
-
  .box1{
     right: -3%;
  }
-
  .box3{
      left: -3%;
  }
-
  .box4{
      right: -3%;
     }
-
  .box6{
     left: -3%;
  }
@@ -182,7 +327,6 @@ body {
     bottom: -5%;
     cursor: url(paw2.png), auto;
  }
-
  .cat {
     background: url(big-2024026_640.png) no-repeat  bottom center;
     position: absolute;
@@ -196,11 +340,9 @@ body {
     cursor: url(paw2.png), auto;
     overflow: hidden;
  }
-
 .cat.badCat {
     background-image: url(badcat.png);
 }
-
 .shake {
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
@@ -213,11 +355,9 @@ body {
     color: white;
    
 }
-
 .up {
     bottom: 37%;
 }
-
 @keyframes shake {
     10%, 90% {
         transform: translate3d(-10px, 0, 0);
@@ -232,16 +372,12 @@ body {
         transform: translate3d(8px, 0, 0);
     }
 }
-
-
 .timeRunningOut {
     
     animation-duration: 1s;
     animation-name: blink2; 
     animation-iteration-count: infinite;
-
 }
-
 @keyframes blink2 {
     0% {
         box-shadow:         inset -6px -10px 50px 44px  red;
@@ -251,7 +387,6 @@ body {
         box-shadow:         inset -6px -10px 50px 44px  #000000;
 }
     
-
     100% {
         box-shadow:         inset 6px -10px 50px 44px  red;
     
@@ -262,14 +397,12 @@ body {
       top: 20px;
       right: 40px;
   }
-
 .timeRunningOut .header__time {
     animation-duration: 1s;
     animation-name: blink;
     animation-iteration-count: infinite;
     font-size: 10vh;
 }
-
 .gameOver .header__time {
     position: absolute;
     left: 0;
@@ -278,7 +411,6 @@ body {
     text-align: center;
     z-index: 80;
 }
-
 @keyframes blink {
     0% {
         color: black;
