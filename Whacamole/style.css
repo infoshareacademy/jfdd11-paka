@@ -4,8 +4,8 @@
 }
 body {
     /* background-color: #3c8b00; */
-    background-image: url('bb1.jpg');
-    background-size: cover;
+    background-image: url('b4.jpg');
+    background-size: contain;
     margin: 0 auto;
     width: 100vw;
     height: auto;
