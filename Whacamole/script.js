@@ -144,6 +144,8 @@ function openSesame() {
         rightdoor.style.left = 100 + "vw";
         playbutton.style.left = 103.8 + "vw";
         isOpen = true;
+        time.innerHTML = "";
+        document.body.classList.remove('timeRunningOut')
     }
 }
 

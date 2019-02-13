@@ -3,13 +3,14 @@
     margin: 0;
 }
 body {
-    background: linear-gradient(#afcc7a, #74b456, #afcc7a);
+    background-color: #3c8b00;
     margin: 0 auto;
     width: 100vw;
     height: auto;
     font-size: 30px;
-    font-family: Chango;
+    font-family: 'Chango';
     overflow: hidden;
+    user-select: none;
 }
 .game {
     display: grid;
@@ -27,7 +28,7 @@ body {
 }
 .instructions {
     color: white;
-    font-family: Chango;
+    font-family: 'Chango';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,8 +78,8 @@ body {
     z-index: 10002;
 }
 .rules h1{
-    padding-top 0px;
-    padding-bottom: 20px
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 .rules p {
     text-align: left;
@@ -92,7 +93,7 @@ body {
     padding-bottom: 15px;
     color: white;
     border-radius: 1rem;
-    font-family: "Chango";
+    font-family: "Chango", Chango;
     text-transform: uppercase;
     transition: transform .2s, box-shadow .2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -158,7 +159,7 @@ body {
         color: white;
         text-shadow: 2px 2px 4px #000000;
         text-align: center;
-        font-family: font-family: 'Catamaran', sans-serif;
+        font-family: 'Chango';
         font-size: 26px;
 }
 
@@ -279,15 +280,7 @@ body {
     transition: all 1.5s ease-in-out;
     z-index: 500;
 }
-/*
-.game {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-between;
-    padding-top: 20vh;
-}
-*/
+
 .header {
     height: 15vh;
     justify-content: center;
@@ -304,9 +297,9 @@ body {
 }
 .header h2 {
     text-shadow: 0 0 7px black;
-    font-size: 10vw;
+    
     font-family: 'Lato';
-    font-size: 300%;
+    font-size: 10vh;
     font-weight: 600;
 }
  .box1{
@@ -321,68 +314,19 @@ body {
  .box6{
     left: -3%;
  }
- 
-@media screen and (max-width: 500px) and ( min-height: 600px){
-    body {
-        background-color: #4aaa00;
-        margin: 0 auto;
-        width: 100%;
-        height: auto;
-        font-size: 30px;
-    }
-    .game {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: 78vh; 
-        cursor: url(paw2.png), auto;
-    }
-    .box{
-        Left: 10%;
-        Right: 0;
-        Top: 10%;
-        width: 100%;
-        height: 33vw;
-        background-position: bottom ;    
-        background-size: 100% 80%;
-        position: relative;  
-        cursor: url(paw2.png), auto;
-    }
-    .cat {
-        background: url(big-2024026_640.png) no-repeat bottom center;
-        position: absolute;
-        width: 40vw;
-        height: 40vw;
-        bottom: 12%;     
-        left: 4%;
-        background-size: 57% 57%;
-        z-index: -1;
-        transition: all 0.4s ease-in-out;
-        cursor: url(paw2.png), auto;
-    }
-}
+
+
+
 .box {
     background: url(bush.png)  no-repeat bottom center;
     width: 33vw;
     height: 20vw;
     background-position: bottom ;    
-    background-size: 90% 65%;
+    background-size: 90% 67%;
     position: relative;
-    bottom: -2%;
+    bottom: -5%;
     cursor: url(paw2.png), auto;
  }
-/*
-.box {
-    background: url(bush.png) 50% 124% no-repeat;
-    width: 33vw;
-    height: 20vw;
-    background-size: contain;
-    position: relative;
-    overflow: hidden;
-    padding-top: 110px;
-    cursor: url(paw2.png), auto;
-}
-*/
  .cat {
     background: url(big-2024026_640.png) no-repeat  bottom center;
     position: absolute;
@@ -390,25 +334,12 @@ body {
     height: 33vw;
     bottom: 7%;    
     left: -6%;
-    background-size: 37% 37%;
+    background-size: 37% 33%;
     z-index: -1;
     transition: bottom 1s ease-in-out;
     cursor: url(paw2.png), auto;
- }
-/*
-.cat {
-    background: url(big-2024026_640.png) 91px 100% no-repeat;
-    position: absolute;
-    width: 33vw;
-    height: 13vw;
-    background-size: contain;
-    z-index: -3;
-    
     overflow: hidden;
-    bottom: -27px;
-    transition: bottom 1s ease-in-out;
-}
-*/              /*transition: ease-in-out 0.2s; */
+ }
 .cat.badCat {
     background-image: url(badcat.png);
 }
@@ -419,7 +350,7 @@ body {
     perspective: 1000px;
 }
 .score {
-    font-size: 150px;
+    font-size: 8vw;
     text-align: center;
     color: white;
    
@@ -462,7 +393,7 @@ body {
     }
   }
   .header__time {
-     
+    
       top: 20px;
       right: 40px;
   }
@@ -470,7 +401,7 @@ body {
     animation-duration: 1s;
     animation-name: blink;
     animation-iteration-count: infinite;
-    font-size: 150px;
+    font-size: 10vh;
 }
 .gameOver .header__time {
     position: absolute;
@@ -489,5 +420,69 @@ body {
     }
     100% {
         color: black;
+    }
+}
+
+@media screen and (max-width: 500px) and ( min-height: 600px){
+
+
+    body {
+        background-color: #3c8b00;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        font-size: 30px;
+        user-select: none;
+    }
+
+    .game {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 78vh; 
+        cursor: url(paw2.png), auto;
+    }
+
+    .box{
+        background: url(bush.png)  no-repeat bottom center;
+        Left: 10%;
+        width: 33vw;
+        height: 20vw;
+        background-position: bottom ;    
+        background-size: 110% 87%;
+        position: relative;
+        bottom: -15%;
+        cursor: url(paw2.png), auto;
+    }
+
+    .cat {
+        background: url(big-2024026_640.png) no-repeat  bottom center;
+        position: absolute;
+        width:  33vw;
+        height: 33vw;
+        bottom: 8%;    
+        left: -6%;
+        background-size: 47% 43%;
+        z-index: -1;
+        transition: all 0.4s ease-in-out;
+        cursor: url(paw2.png), auto;
+    }
+
+    .score {
+        font-size: 10vw;
+        text-align: center;
+        color: white;
+       
+    }
+
+     .up {
+        bottom: 48%;
+    }
+
+    .timeRunningOut .header__time {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    font-size: 10vh;
     }
 }
