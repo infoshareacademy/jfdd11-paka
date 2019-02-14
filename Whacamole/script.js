@@ -177,14 +177,6 @@ userName.addEventListener('submit', event => {
     userName.classList.add('clicked');
 })
 
-nameButton.addEventListener('click', function(event){
-event.preventDefault();
-addNewScore(inputValue);
-nameButton.classList.add('clicked');
-})
-
-
-
 function addNewScore(name) {
     fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json', {
         method: 'POST',
