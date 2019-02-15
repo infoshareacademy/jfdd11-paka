@@ -54,8 +54,9 @@ function startGame() {
         if (distance < 0) {
 
             document.body.classList.add('gameOver');
-            endTime = Date.now();
+            endTime = Date.now();                
             clearInterval(x);
+            clearInterval(y)
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
@@ -64,7 +65,9 @@ function startGame() {
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
-                leaderboardTAble.style.display = 'none';
+                // leaderboardTAble.style.display = 'none';
+                leaderboardTAble.classList.remove('rankingVisible')
+               
             })
 
         }
@@ -128,7 +131,7 @@ function startGame() {
 
     }
 
-    setInterval(randomCat, randomTime(700, 2000));
+   let y = setInterval(randomCat, randomTime(700, 2000));
 }
 
 /* Start game animation */
@@ -150,6 +153,8 @@ function openSesame() {
         isOpen = true;
         time.innerHTML = "";
         document.body.classList.remove('timeRunningOut')
+        leaderboardTAble.classList.remove('rankingVisible')
+        
     }
 }
 
