@@ -56,7 +56,6 @@ function startGame() {
 
             document.body.classList.add('gameOver');
             endTime = Date.now();
-            clearInterval(x);
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
@@ -65,18 +64,19 @@ function startGame() {
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
-                leaderboardTAble.style.display = 'none';
+                leaderboardTAble.classList.remove('rankingVisible');
             })
-
+            clearInterval(x);
+            
         }
         if (distance >= 65) {
             level += 1;
         }
     }, 1000);
 
-    function addMoreTime(x) {
-        distance += x;
-    }
+    // function addMoreTime(x) {
+    //     distance += x;
+    // }
 
     let randomTime = function (min, max) {
         return (Math.random() * (max - min) + min);
@@ -85,11 +85,11 @@ function startGame() {
 
     const catShake = function (event) {
         if (event.target.children[0].classList.contains("badCat")) {
-            addMoreTime(-20);
+            distance -= 20;
             event.target.children[1].textContent = "-20";
             badSound.play();
         } else {
-            addMoreTime(2);
+            distance += 2;
             event.target.children[1].textContent = "+2";
             goodSound.play();
         }
