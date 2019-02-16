@@ -15,6 +15,7 @@ let myScore = 0;
 let sortedScores;
 let myPosition;
 const letsCheck = document.querySelector('.letsCheck');
+const nameButton = document.querySelector('nameButton');
 
 
 
@@ -60,7 +61,7 @@ function startGame() {
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
-            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore +  ' seconds.';
+            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore + ' seconds.';
             updateScores();
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
@@ -174,59 +175,59 @@ playbutton.addEventListener("click", openSesame);
 
 // LEADERBOARD
 
-userName.addEventListener('submit', event => { 
-   event.preventDefault();
-   const inputValue = event.target.name.value;
-   addNewScore(inputValue);
-   userName.classList.add('clicked');
+userName.addEventListener('submit', event => {
+    event.preventDefault();
+    const inputValue = event.target.name.value;
+    addNewScore(inputValue);
+    userName.classList.add('clicked');
 })
 
- function addNewScore(name) {
-   fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json', {
-     method: 'POST', 
-     body: JSON.stringify({ 
-       name: name,
-       score: myScore
-     }) 
-     })
-     .then(() => updateScores())
- }
- 
- function updateScores(){
-    fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json')
-    .then(res => res.json())
-    .then(objects => {
-    let sortedObjects = Object.entries(objects).map(object => ({ name: object[1].name, score: object[1].score })).sort((a,b) => b.score - a.score);
-    let sortedPlayers = sortedObjects.map(objects => objects.name);
-     sortedScores = sortedObjects.map(objects => objects.score);
-
-    console.log(sortedPlayers);
-    console.log(sortedScores);
-
-    let firstScore = document.querySelector('.firstScore');
-    firstScore.textContent = sortedScores[0];
-    let firstPlayer = document.querySelector('.firstPlace');
-    firstPlayer.textContent = sortedPlayers[0];
-
-    let secondScore = document.querySelector('.secondScore');
-    secondScore.textContent = sortedScores[1];
-    let secondPlayer = document.querySelector('.secondPlace');
-    secondPlayer.textContent = sortedPlayers[1];
-
-    let thirdScore = document.querySelector('.thirdScore');
-    thirdScore.textContent = sortedScores[2];
-    let thirdPlayer = document.querySelector('.thirdPlace');
-    thirdPlayer.textContent = sortedPlayers[2];
-
-    myPosition = sortedScores.findIndex(score => score === myScore) + 1;
-
-    if (userName.classList.contains('clicked') === true) {
-        userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
-    }
-    
-    return myPosition;
-
-
-})
+function addNewScore(name) {
+    fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: name,
+            score: myScore
+        })
+    })
+        .then(() => updateScores())
 }
-    
+
+function updateScores() {
+    fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json')
+        .then(res => res.json())
+        .then(objects => {
+            let sortedObjects = Object.entries(objects).map(object => ({ name: object[1].name, score: object[1].score })).sort((a, b) => b.score - a.score);
+            let sortedPlayers = sortedObjects.map(objects => objects.name);
+            sortedScores = sortedObjects.map(objects => objects.score);
+
+            console.log(sortedPlayers);
+            console.log(sortedScores);
+
+            let firstScore = document.querySelector('.firstScore');
+            firstScore.textContent = sortedScores[0];
+            let firstPlayer = document.querySelector('.firstPlace');
+            firstPlayer.textContent = sortedPlayers[0];
+
+            let secondScore = document.querySelector('.secondScore');
+            secondScore.textContent = sortedScores[1];
+            let secondPlayer = document.querySelector('.secondPlace');
+            secondPlayer.textContent = sortedPlayers[1];
+
+            let thirdScore = document.querySelector('.thirdScore');
+            thirdScore.textContent = sortedScores[2];
+            let thirdPlayer = document.querySelector('.thirdPlace');
+            thirdPlayer.textContent = sortedPlayers[2];
+
+            myPosition = sortedScores.findIndex(score => score === myScore) + 1;
+
+            if (userName.classList.contains('clicked') === true) {
+                userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+            }
+
+            return myPosition;
+
+
+        })
+}
+
