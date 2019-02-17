@@ -91,7 +91,7 @@ const catShake = function (event) {
 
 
 function startGame() {
-     distance = 20;
+    distance = 20;
     let level = 1;
     yourPosition.innerHTML = ''
     startTime = Date.now();
@@ -127,7 +127,7 @@ function startGame() {
             level += 1;
         }
     }, 1000);
- 
+
 
 }
 
