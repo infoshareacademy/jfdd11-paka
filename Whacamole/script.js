@@ -176,7 +176,7 @@ userName.addEventListener('submit', event => {
     const inputValue = event.target.name.value;
     addNewScore(inputValue);
     userName.classList.add('clicked');
-    return inputValue;
+
 })
 
 function addNewScore(name) {
@@ -219,11 +219,12 @@ function updateScores() {
 
             myPosition = sortedScores.findIndex(score => score === myScore) + 1;
 
+
             if (userName.classList.contains('clicked') === true) {
                 userName.style.display = 'none';
                 yourPosition.style.display = 'block'
                 yourPosition.style.fontSize = 40 + 'px'
-                yourPosition.innerHTML = 'Thanks so much for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
+                yourPosition.innerHTML = userName.name.value.charAt(0).toUpperCase() + userName.name.value.slice(1) + '!<br>Thanks so much for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
                 userInput.appendChild(yourPosition)
                 userName.classList.remove('clicked')
             }
