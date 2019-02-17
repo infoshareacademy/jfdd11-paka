@@ -39,8 +39,59 @@ const showRules = function () {
 
 rulesButton.addEventListener("click", showRules);
 
+let randomTime = function (min, max) {
+    return (Math.random() * (max - min) + min);
+}
+
+const randomCat = function () {
+
+    const cats = Array.from(document.querySelectorAll('.cat'));
+
+
+
+    let catIndex = parseInt(Math.random() * (cats.length));
+
+
+    cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
+
+    let cat = cats[catIndex];
+
+    let random_boolean = Math.random() >= 0.5;
+
+    if (random_boolean === true) {
+        cat.classList.add('badCat');
+
+    }
+
+
+    cat.classList.add('up');
+    cat.parentElement.addEventListener('mouseup', catShake)
+
+}
+let distance
+
+const catShake = function (event) {
+    if (event.target.children[0].classList.contains("badCat")) {
+        distance -= 20;
+        event.target.children[1].textContent = "-20";
+        badSound.play();
+    } else {
+        distance += 2;
+        event.target.children[1].textContent = "+2";
+        goodSound.play();
+    }
+
+    setTimeout(function () {
+        event.target.children[1].textContent = "";
+    }, 500)
+    event.target.children[0].classList.add('shake');
+    event.target.children[0].classList.remove('up');
+    event.target.removeEventListener('mouseup', catShake);
+}
+
+
 function startGame() {
-    let distance = 20;
+     distance = 20;
     let level = 1;
     yourPosition.innerHTML = ''
     startTime = Date.now();
@@ -54,7 +105,7 @@ function startGame() {
             document.body.classList.remove('timeRunningOut');
         }
         time.innerHTML = distance;
-        if (distance < 0) {
+        if (distance <= 0) {
             userName.style.display = 'block';
 
             document.body.classList.add('gameOver');
@@ -76,58 +127,8 @@ function startGame() {
             level += 1;
         }
     }, 1000);
+ 
 
-    let randomTime = function (min, max) {
-        return (Math.random() * (max - min) + min);
-    }
-
-
-    const catShake = function (event) {
-        if (event.target.children[0].classList.contains("badCat")) {
-            distance -= 20;
-            event.target.children[1].textContent = "-20";
-            badSound.play();
-        } else {
-            distance += 2;
-            event.target.children[1].textContent = "+2";
-            goodSound.play();
-        }
-
-        setTimeout(function () {
-            event.target.children[1].textContent = "";
-        }, 500)
-        event.target.children[0].classList.add('shake');
-        event.target.children[0].classList.remove('up');
-        event.target.removeEventListener('mouseup', catShake);
-    }
-
-    const randomCat = function () {
-
-        const cats = Array.from(document.querySelectorAll('.cat'));
-
-
-
-        let catIndex = parseInt(Math.random() * (cats.length));
-
-
-        cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
-
-        let cat = cats[catIndex];
-
-        let random_boolean = Math.random() >= 0.5;
-
-        if (random_boolean === true) {
-            cat.classList.add('badCat');
-
-        }
-
-
-        cat.classList.add('up');
-        cat.parentElement.addEventListener('mouseup', catShake)
-
-    }
-
-    setInterval(randomCat, randomTime(500, 1500));
 }
 
 /* Start game animation */
@@ -141,6 +142,7 @@ let start = document.querySelector(".wrapper");
 
 function openSesame() {
     if (isOpen === false) {
+        setInterval(randomCat, randomTime(500, 1500));
         startGame();
         document.body.classList.remove('gameOver');
         leftdoor.style.left = -50 + "vw";
@@ -160,6 +162,7 @@ function closeSesame() {
         playbutton.style.left = 32.5 + "vw";
         isOpen = false;
         endTime = Date.now();
+        clearInterval(randomCat)
     }
 }
 
@@ -220,7 +223,7 @@ function updateScores() {
                 userName.style.display = 'none';
                 yourPosition.style.display = 'block'
                 yourPosition.style.fontSize = 40 + 'px'
-                yourPosition.innerHTML =  'But thanks for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
+                yourPosition.innerHTML = 'Thanks so much for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
                 userInput.appendChild(yourPosition)
                 userName.classList.remove('clicked')
             }
