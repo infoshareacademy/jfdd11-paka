@@ -151,6 +151,8 @@ function openSesame() {
         isOpen = true;
         time.innerHTML = "";
         document.body.classList.remove('timeRunningOut')
+        leaderboardTAble.classList.remove('rankingVisible')
+        
     }
 }
 
