@@ -16,7 +16,8 @@ let sortedScores;
 let myPosition;
 const letsCheck = document.querySelector('.letsCheck');
 const nameButton = document.querySelector('nameButton');
-
+const userInput = document.querySelector('.userInput');
+let yourPosition = document.createElement('p');
 
 
 const hideRules = function () {
@@ -38,9 +39,56 @@ const showRules = function () {
 
 rulesButton.addEventListener("click", showRules);
 
+
+let randomTime = function (min, max) {
+    return (Math.random() * (max - min) + min);
+}
+
+const randomCat = function () {
+
+    const cats = Array.from(document.querySelectorAll('.cat'));
+    let catIndex = parseInt(Math.random() * (cats.length));
+
+    cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
+    let cat = cats[catIndex];
+
+    let random_boolean = Math.random() >= 0.5;
+
+    if (random_boolean === true) {
+        cat.classList.add('badCat');
+    }
+    cat.classList.add('up');
+    cat.parentElement.addEventListener('mouseup', catShake)
+
+}
+
+let distance = 20;
+let level = 1;
+
+const catShake = function (event) {
+    if (event.target.children[0].classList.contains("badCat")) {
+        distance -= 20;
+        event.target.children[1].textContent = "-20";
+        badSound.play();
+    } else {
+        distance += 2;
+        event.target.children[1].textContent = "+2";
+        goodSound.play();
+    }
+
+    setTimeout(function () {
+        event.target.children[1].textContent = "";
+    }, 600)
+    event.target.children[0].classList.add('shake');
+    event.target.children[0].classList.remove('up');
+    event.target.removeEventListener('mouseup', catShake);
+}
+
 function startGame() {
-    let distance = 20;
-    let level = 1;
+    distance = 20;
+    level = 1;
+    setInterval(randomCat, randomTime(500, 1500));
+    yourPosition.innerHTML = ''
     startTime = Date.now();
     let x = setInterval(function () {
         distance = distance - level;
@@ -53,83 +101,29 @@ function startGame() {
         }
         time.innerHTML = distance;
         if (distance < 0) {
+            userName.style.display = 'block';
 
             document.body.classList.add('gameOver');
             endTime = Date.now();
-            clearInterval(x);
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
-            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore + ' seconds.';
+            scoreA.innerHTML = 'The cat got away... You lasted ' + myScore + ' seconds.';
             updateScores();
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
                 closeSesame();
-                leaderboardTAble.style.display = 'none';
+                clearInterval(x);
+                clearInterval(randomCat, randomTime)
+                leaderboardTAble.classList.remove('rankingVisible');
             })
 
         }
-        if (distance >= 65) {
+        if (distance >= 40) {
             level += 1;
         }
     }, 1000);
 
-    function addMoreTime(x) {
-        distance += x;
-    }
-
-    let randomTime = function (min, max) {
-        return (Math.random() * (max - min) + min);
-    }
-
-
-    const catShake = function (event) {
-        if (event.target.children[0].classList.contains("badCat")) {
-            addMoreTime(-20);
-            event.target.children[1].textContent = "-20";
-            badSound.play();
-        } else {
-            addMoreTime(2);
-            event.target.children[1].textContent = "+2";
-            goodSound.play();
-        }
-
-        setTimeout(function () {
-            event.target.children[1].textContent = "";
-        }, 500)
-        event.target.children[0].classList.add('shake');
-        event.target.children[0].classList.remove('up');
-        event.target.removeEventListener('mouseup', catShake);
-    }
-
-    const randomCat = function () {
-
-        const cats = Array.from(document.querySelectorAll('.cat'));
-
-
-
-        let catIndex = parseInt(Math.random() * (cats.length));
-
-
-        cats.forEach(element => element.classList.remove('up', 'shake', 'badCat'));
-
-        let cat = cats[catIndex];
-
-        let random_boolean = Math.random() >= 0.5;
-
-        if (random_boolean === true) {
-            cat.classList.add('badCat');
-
-        }
-
-
-        cat.classList.add('up');
-        // cat.classList.add('badCat');
-        cat.parentElement.addEventListener('mouseup', catShake)
-
-    }
-
-    setInterval(randomCat, randomTime(700, 2000));
 }
 
 /* Start game animation */
@@ -162,6 +156,7 @@ function closeSesame() {
         playbutton.style.left = 32.5 + "vw";
         isOpen = false;
         endTime = Date.now();
+        distance = 0;
     }
 }
 
@@ -175,6 +170,7 @@ userName.addEventListener('submit', event => {
     const inputValue = event.target.name.value;
     addNewScore(inputValue);
     userName.classList.add('clicked');
+    return inputValue;
 })
 
 function addNewScore(name) {
@@ -187,6 +183,7 @@ function addNewScore(name) {
     })
         .then(() => updateScores())
 }
+
 
 function updateScores() {
     fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json')
@@ -217,7 +214,12 @@ function updateScores() {
             myPosition = sortedScores.findIndex(score => score === myScore) + 1;
 
             if (userName.classList.contains('clicked') === true) {
-                userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+                userName.style.display = 'none';
+                yourPosition.style.display = 'block'
+                yourPosition.style.fontSize = 40 + 'px'
+                yourPosition.innerHTML =  'But thanks for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
+                userInput.appendChild(yourPosition)
+                userName.classList.remove('clicked')
             }
 
             return myPosition;
