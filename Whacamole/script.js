@@ -124,9 +124,9 @@ function startGame() {
             clearInterval(x);
 
         }
-        if (distance >= 40) {
-            level += 1;
-        }
+        // if (distance >= 40) {
+        //     level += 1;
+        // }
     }, 1000);
 
 
@@ -225,7 +225,7 @@ function updateScores() {
                 userName.style.display = 'none';
                 yourPosition.style.display = 'block'
                 yourPosition.style.fontSize = 37 + 'px'
-                oops.innerHTML+= ', ' + userName.name.value.charAt(0).toUpperCase() + userName.name.value.slice(1) + '!';
+                oops.innerHTML = userName.name.value.charAt(0).toUpperCase() + userName.name.value.slice(1) + '!' + '<br>';
                 yourPosition.innerHTML ='Thanks so much for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
                 userInput.appendChild(yourPosition)
                 userName.classList.remove('clicked')
