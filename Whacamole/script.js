@@ -108,7 +108,6 @@ function startGame() {
         time.innerHTML = distance;
         if (distance <= 0) {
             userName.style.display = 'block';
-
             document.body.classList.add('gameOver');
             endTime = Date.now();
             time.innerHTML = "Game over";
@@ -143,9 +142,9 @@ let start = document.querySelector(".wrapper");
 
 function openSesame() {
     if (isOpen === false) {
+        document.body.classList.remove('gameOver');
         setInterval(randomCat, randomTime(500, 1500));
         startGame();
-        document.body.classList.remove('gameOver');
         leftdoor.style.left = -50 + "vw";
         rightdoor.style.left = 100 + "vw";
         playbutton.style.left = 103.8 + "vw";
