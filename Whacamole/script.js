@@ -16,7 +16,8 @@ let sortedScores;
 let myPosition;
 const letsCheck = document.querySelector('.letsCheck');
 const nameButton = document.querySelector('nameButton');
-
+const userInput = document.querySelector('.userInput');
+let yourPosition = document.createElement('p');
 
 
 const hideRules = function () {
@@ -41,6 +42,7 @@ rulesButton.addEventListener("click", showRules);
 function startGame() {
     let distance = 20;
     let level = 1;
+    yourPosition.innerHTML = ''
     startTime = Date.now();
     let x = setInterval(function () {
         distance = distance - level;
@@ -53,13 +55,14 @@ function startGame() {
         }
         time.innerHTML = distance;
         if (distance < 0) {
+            userName.style.display = 'block';
 
             document.body.classList.add('gameOver');
             endTime = Date.now();
             time.innerHTML = "Game over";
             leaderboardTAble.classList.add('rankingVisible');
             myScore = Math.round((endTime - startTime) / 1000);
-            scoreA.innerHTML = 'The cat got away. You lasted ' + myScore + ' seconds.';
+            scoreA.innerHTML = 'The cat got away... You lasted ' + myScore + ' seconds.';
             updateScores();
             scoreA.style.color = 'white'
             closeButton.addEventListener("click", function () {
@@ -67,16 +70,12 @@ function startGame() {
                 leaderboardTAble.classList.remove('rankingVisible');
             })
             clearInterval(x);
-            
+
         }
         if (distance >= 65) {
             level += 1;
         }
     }, 1000);
-
-    // function addMoreTime(x) {
-    //     distance += x;
-    // }
 
     let randomTime = function (min, max) {
         return (Math.random() * (max - min) + min);
@@ -124,12 +123,11 @@ function startGame() {
 
 
         cat.classList.add('up');
-        // cat.classList.add('badCat');
         cat.parentElement.addEventListener('mouseup', catShake)
 
     }
 
-    setInterval(randomCat, randomTime(700, 2000));
+    setInterval(randomCat, randomTime(600, 2000));
 }
 
 /* Start game animation */
@@ -175,6 +173,7 @@ userName.addEventListener('submit', event => {
     const inputValue = event.target.name.value;
     addNewScore(inputValue);
     userName.classList.add('clicked');
+    return inputValue;
 })
 
 function addNewScore(name) {
@@ -187,6 +186,7 @@ function addNewScore(name) {
     })
         .then(() => updateScores())
 }
+
 
 function updateScores() {
     fetch('https://catchacat-32a97.firebaseio.com/catchacat-32a97.json')
@@ -217,7 +217,12 @@ function updateScores() {
             myPosition = sortedScores.findIndex(score => score === myScore) + 1;
 
             if (userName.classList.contains('clicked') === true) {
-                userName.innerHTML = '<br>Your position in the ranking: ' + myPosition + '<br><br><br>';
+                userName.style.display = 'none';
+                yourPosition.style.display = 'block'
+                yourPosition.style.fontSize = 40 + 'px'
+                yourPosition.innerHTML =  'But thanks for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
+                userInput.appendChild(yourPosition)
+                userName.classList.remove('clicked')
             }
 
             return myPosition;
