@@ -297,15 +297,19 @@ h4 {
 
   .main-menu {
   flex-direction: column;
-  background: red;
+  background: #f36f5a;
   text-align: center;
+  display:  none;
+  border: 1px solid white;
+  font-size: 10vw;
   }
+ 
   .main-menu a {
-    display:  none;
-    padding-top: 80px;
     color: white;
-    font-size: 10vw;
-  }nav {
+    font-size: 10vw;}
+    
+  }
+  nav {
    position: fixed;
    top: 0;
    left: 0;
@@ -313,7 +317,7 @@ h4 {
    flex-wrap: nowrap;
  } 
  
- .main-menu:hover > .a {
+ .burger:hover > .main-menu a {
    display: block;
  }
   .burger {
@@ -334,6 +338,5 @@ h4 {
  .navigation .page {
    padding-bottom: 5%;
  }
-}
 
-git
+

@@ -108,6 +108,20 @@
             <div>
         </div>
     </section>
+    
+    <script>
+   var navButton = document.querySelector(".burger");
+if (navButton.addEventListener) {
+  navButton.addEventListener("click", function() {
+     var nav = document.querySelector(".main-menu");
+     if (nav.style.display === "block") {
+        nav.style.display = "none";
+     } else {
+        nav.style.display = "block";
+     }
+  },false);
+}
+    </script>
 </body>
 
 </html>
