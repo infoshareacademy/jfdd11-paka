@@ -3,7 +3,9 @@
     margin: 0;
 }
 body {
-    background-color: #3c8b00;
+    /* background-color: #3c8b00; */
+    background-image: url('b4.jpg');
+    background-size: contain;
     margin: 0 auto;
     width: 100vw;
     height: auto;
@@ -13,12 +15,16 @@ body {
     user-select: none;
 }
 .game {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    /* display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: 1fr 1fr;
-    height: 78vh; 
+    grid-template-rows: 1fr 1fr; */
+    height: 85vh; 
     overflow: hidden;
-    cursor: url(paw2.png), auto;
+    cursor: url(homezoopointer.png), auto;
 }
 .wrapper {
     background-size: cover;
@@ -302,7 +308,7 @@ body {
     font-size: 10vh;
     font-weight: 600;
 }
- .box1{
+ /* .box1{
     right: -3%;
  }
  .box3{
@@ -313,19 +319,19 @@ body {
     }
  .box6{
     left: -3%;
- }
+ } */
 
 
 
 .box {
-    background: url(bush.png)  no-repeat bottom center;
+    background: url(bush2.png)  no-repeat bottom center;
     width: 33vw;
-    height: 20vw;
+    height: 16vw;
     background-position: bottom ;    
     background-size: 90% 67%;
     position: relative;
     bottom: -5%;
-    cursor: url(paw2.png), auto;
+    cursor: url(homezoopointer.png), auto;
  }
  .cat {
     background: url(big-2024026_640.png) no-repeat  bottom center;
