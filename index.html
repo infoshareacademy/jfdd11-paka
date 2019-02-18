@@ -24,12 +24,14 @@
                 <img src="img/homezoonew.png" />
                 HomeZoo
             </a>
+            <label for="toggle">&#9776;</label>
+            <input type="checkbox" id="toggle"/>
             <nav class="main-menu">
                 <a href="#features">Features</a>
                 <a href="#subscription">Membership</a>
                 <a href="#about">About Us</a>
                 
-            </nav><img class="burger" src="burger.svg" />
+             
         </div>
     </div>
 
@@ -110,17 +112,7 @@
     </section>
     
     <script>
-   var navButton = document.querySelector(".burger");
-if (navButton.addEventListener) {
-  navButton.addEventListener("click", function() {
-     var nav = document.querySelector(".main-menu");
-     if (nav.style.display === "block") {
-        nav.style.display = "none";
-     } else {
-        nav.style.display = "block";
-     }
-  },false);
-}
+
     </script>
 </body>
 

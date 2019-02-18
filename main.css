@@ -77,10 +77,14 @@ a {
   padding: 2.1rem 1rem;
   font-family: "Chango", cursive;
 }
-
-.burger {
+label {
   display: none;
 }
+#toggle {
+  display: none;
+}
+
+
 
 .intro .page {
   background: url(img/dog-background-cleaned.jpg) right;
@@ -299,17 +303,15 @@ h4 {
   flex-direction: column;
   background: #f36f5a;
   text-align: center;
-  display:  none;
   border: 1px solid white;
-  font-size: 10vw;
   }
- 
   .main-menu a {
-    color: white;
-    font-size: 10vw;}
+    display:  none;
+    border: 1px solid white;
     
-  }
-  nav {
+    color: white;
+    font-size: 10vw;
+  }nav {
    position: fixed;
    top: 0;
    left: 0;
@@ -317,13 +319,10 @@ h4 {
    flex-wrap: nowrap;
  } 
  
- .burger:hover > .main-menu a {
+ .main-menu:hover > .a {
    display: block;
  }
-  .burger {
-    display: flex;
   
-  }
 
   .intro .page {
     background: white;
@@ -339,4 +338,13 @@ h4 {
    padding-bottom: 5%;
  }
 
-
+ label{
+   font-size: 50px;
+   display: block;
+   z-index: 90;
+   color: #f36f5a;
+ }
+#toggle:checked + .main-menu a {
+  display: block;
+}
+}
