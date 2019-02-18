@@ -108,7 +108,6 @@ function startGame() {
         time.innerHTML = distance;
         if (distance <= 0) {
             userName.style.display = 'block';
-
             document.body.classList.add('gameOver');
             endTime = Date.now();
             time.innerHTML = "Game over";
@@ -124,9 +123,9 @@ function startGame() {
             clearInterval(x);
 
         }
-        if (distance >= 40) {
-            level += 1;
-        }
+        // if (distance >= 40) {
+        //     level += 1;
+        // }
     }, 1000);
 
 
@@ -143,9 +142,9 @@ let start = document.querySelector(".wrapper");
 
 function openSesame() {
     if (isOpen === false) {
+        document.body.classList.remove('gameOver');
         setInterval(randomCat, randomTime(500, 1500));
         startGame();
-        document.body.classList.remove('gameOver');
         leftdoor.style.left = -50 + "vw";
         rightdoor.style.left = 100 + "vw";
         playbutton.style.left = 103.8 + "vw";
@@ -227,7 +226,7 @@ function updateScores() {
                 userName.style.display = 'none';
                 yourPosition.style.display = 'block'
                 yourPosition.style.fontSize = 37 + 'px'
-                oops.innerHTML+= ', ' + userName.name.value.charAt(0).toUpperCase() + userName.name.value.slice(1) + '!';
+                oops.innerHTML = userName.name.value.charAt(0).toUpperCase() + userName.name.value.slice(1) + '!' + '<br>';
                 yourPosition.innerHTML ='Thanks so much for playing! <br> Your position in the ranking: ' + myPosition + '<br><br>';
                 userInput.appendChild(yourPosition)
                 userName.classList.remove('clicked')
