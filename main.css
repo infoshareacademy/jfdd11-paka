@@ -172,7 +172,9 @@ label {
     margin: 0 auto;
   }
 
-
+  .aboutUs ul{
+    list-style: none;
+  }
 }
 
 @media screen and (min-width: 1199 px){
@@ -196,6 +198,9 @@ label {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
   
+  .photocontainer ul {
+    list-style: none outside none;
+  }
 
 }
 
@@ -261,40 +266,6 @@ label {
   height: 2rem;
 }
 
-.aboutUs {
-  position: flex;
-  justify-content: space-around;
-  background-color: #f36f5a;
-}
-
-.photocontainer {
-  display: flex;
-  justify-content: space-around;
-  flex-basis: 25%;
-}
-
-.picture {
-  width: 30vh;
-  border-radius: 50%;
-  border: 3px;
-  border-color: black;
-  margin: 50px;
-}
-
-h4 {
-  text-align: center;
-  color: white;
-  font-size: 4em;
-  margin: 0;
-  padding: 3rem 0;
-}
-
-.photocontainer a {
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  padding: 3rem;
-}
 
 
 @media screen and (max-width: 600px) {
@@ -344,7 +315,19 @@ h4 {
    z-index: 90;
    color: #f36f5a;
  }
-#toggle:checked + .main-menu a {
+  #toggle:checked + .main-menu a {
   display: block;
-}
+  }
+
+  .aboutUs{
+    display: flex;
+    align-self: auto;
+  }
+
+  .aboutUs ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+  }
 }
