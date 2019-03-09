@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
   
 }
 
@@ -151,16 +152,17 @@ label {
 
 .team {
   background-color: white;
-  font-family: "Open Sans", sans-serif;
+
   color: #f36f5a;
   font-weight: medium;
   font-size: 24px;
   text-align: center;
   padding-bottom: 100px;
-  padding-top: 60px; 
+  
 }
 
 .team h2 {
+  
   font-size: 40px;
   font-weight: 999;
   text-transform: uppercase;
@@ -223,9 +225,7 @@ label {
     margin: 0 auto;
   }
 
-  .aboutUs ul{
-    list-style: none;
-  }
+  
 }
 
 @media screen and (min-width: 1199 px){
@@ -370,17 +370,9 @@ label {
   display: block;
   }
 
-  .aboutUs{
-    display: flex;
-    align-self: auto;
-  }
 
-  .aboutUs ul{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    list-style: none;
-  }
+
+  
 }
 
 
