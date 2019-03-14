@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  
   
 }
 
@@ -34,10 +34,11 @@ a {
   }
 }
 
-.header {
+.header, h2, h4, a {
   font-family: "Chango", cursive;
   font-weight: normal;
 }
+
 
 .logo {
   padding-top: 1rem;
@@ -94,6 +95,7 @@ label {
 }
 
 .call-to-action {
+  display: flex;
   margin-top: 3rem;
 }
 
@@ -282,7 +284,7 @@ label {
 
 .subscription-container .content {
   /* background: #f36f5a; */
-  padding: 3rem;
+  /* padding: 3rem; */
   text-align: center;
   color: white;
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
@@ -300,7 +302,7 @@ label {
 .subscription-container input {
   padding: 1rem 2rem;
   border: 0;
-  width: 300px;
+  /* width: 300px; */
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -308,7 +310,7 @@ label {
   font-size: 1rem;
   background: white;
   border: 0;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   cursor: pointer;
   font-family: "Chango", cursive;
 }
@@ -320,6 +322,10 @@ label {
 
 
 @media screen and (max-width: 600px) {
+
+  .intro-content {
+    margin-top: 80px;
+  }
 
   .main-menu {
   flex-direction: column;
@@ -370,8 +376,10 @@ label {
   display: block;
   }
 
+  
 
-
+   
+  
   
 }
 
@@ -400,4 +408,6 @@ label {
   .user>img {
       width: 50%;
   }
+
+  
 }
