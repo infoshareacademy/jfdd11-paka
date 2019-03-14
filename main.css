@@ -376,7 +376,9 @@ label {
   display: block;
   }
 
-  
+  .copyright {
+    width: 90vw;
+  }
 
    
   
