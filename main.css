@@ -85,6 +85,10 @@ label {
 #toggle {
   display: none;
 }
+.copyright  {
+background: #f36f5a;
+color: black;
+}
 
 
 
