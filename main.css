@@ -13,7 +13,9 @@ body {
   
   
 }
-
+h2.header {
+  text-shadow: 2px 2px 8px black;
+}
 a {
   text-decoration: none;
   color: #f36f5a;
