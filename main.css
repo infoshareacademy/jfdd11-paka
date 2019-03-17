@@ -87,7 +87,7 @@ label {
 }
 .copyright  {
 background: #f36f5a;
-color: white;
+color: black;
 }
 
 
@@ -380,7 +380,9 @@ color: white;
   display: block;
   }
 
-  
+  .copyright {
+    width: 90vw;
+  }
 
    
   
